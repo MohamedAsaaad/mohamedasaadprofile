@@ -1,1192 +1,2080 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mohamed Asaad | Electrical Engineer</title>
-  <meta name="description" content="Electrical Engineer specializing in transformer design, R&D, and renewable energy solutions.">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { darkMode: 'class' }
-  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mohamed Asaad is a commercial and business development professional working across energy, digital solutions, and technology.">
+  <meta name="theme-color" content="#17211d">
+  <title>Mohamed Asaad | Commercial & Business Development</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Syne:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #065f46;
-      --secondary: #10b981;
-      --accent: #f59e0b;
+      --ink: #17211d;
+      --ink-soft: #415049;
+      --paper: #f3efe6;
+      --paper-deep: #e7e0d2;
+      --white: #fffdf8;
+      --signal: #d4663f;
+      --signal-dark: #a83e20;
+      --moss: #6f866a;
+      --line: rgba(23, 33, 29, 0.18);
+      --shadow: 0 24px 80px rgba(26, 38, 32, 0.12);
+      --display: "Newsreader", Georgia, serif;
+      --sans: "Syne", sans-serif;
+      --mono: "DM Mono", monospace;
     }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f3f4f6;
-      color: #1f2937;
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
       scroll-behavior: smooth;
+      scroll-padding-top: 88px;
     }
-    body.dark {
-      background-color: #111827 !important;
-      color: #f3f4f6 !important;
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.65;
     }
-    .dark .bg-white { background-color: #171c22 !important; }
-    .dark .bg-gray-100 { background-color: #23272f !important; }
-    .dark .bg-gray-50 { background-color: #111827 !important; }
-    .dark .text-gray-700 { color: #d1fae5 !important; }
-    .dark .text-gray-400 { color: #94a3b8 !important; }
-    .dark .shadow-lg { box-shadow: 0 4px 12px rgba(15,23,42,0.3) !important; }
-    .hero-gradient {
-      background: linear-gradient(135deg, #065f46, #047857, #059669);
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      pointer-events: none;
+      content: "";
+      opacity: 0.055;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.7'/%3E%3C/svg%3E");
     }
-    .portfolio-item, .experience-card, .certificate-card {
-      transition: all 0.3s ease;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+    ::selection {
+      background: var(--signal);
+      color: var(--white);
     }
-    .portfolio-item:hover, .experience-card:hover, .certificate-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
-    .timeline::before {
-      content: '';
-      position: absolute; top: 0; bottom: 0;
-      width: 4px;
-      background: linear-gradient(to bottom, var(--primary), var(--secondary));
-      left: 50%; transform: translateX(-50%);
-      z-index: 1;
+
+    img {
+      display: block;
+      max-width: 100%;
     }
-    .timeline-dot {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      width: 20px; height: 20px; border-radius: 50%;
-      background: var(--primary); z-index: 2;
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
     }
-    .contact-icon {
-      width: 60px; height: 60px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      margin-bottom: 1rem;
+
+    button {
+      font: inherit;
     }
-    .nav-link { position: relative; padding-bottom: 5px; }
-    .nav-link::after {
-      content: '';
-      position: absolute; bottom: 0; left: 0;
-      width: 0; height: 2px;
-      background: linear-gradient(to right, var(--primary), var(--secondary));
-      transition: width 0.3s;
+
+    :focus-visible {
+      outline: 3px solid var(--signal);
+      outline-offset: 4px;
     }
-    .nav-link:hover::after { width: 100%; }
-    .section-title {
-      position: relative; display: inline-block;
-      padding-bottom: 15px; margin-bottom: 30px;
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 200;
+      padding: 10px 16px;
+      transform: translateY(-160%);
+      background: var(--ink);
+      color: var(--white);
+      transition: transform 180ms ease;
     }
-    .section-title::after {
-      content: '';
-      position: absolute; bottom: 0; left: 50%;
-      transform: translateX(-50%);
-      width: 60px; height: 4px;
-      background: linear-gradient(to right, var(--primary), var(--secondary));
-      border-radius: 2px;
+
+    .skip-link:focus {
+      transform: translateY(0);
     }
-    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s; }
-    .mobile-menu.active { max-height: 500px; }
-    .social-hover:hover { transform: translateY(-5px); transition: 0.3s; }
-    .gradient-text {
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin-inline: auto;
     }
-    .research-card { transition: all 0.3s; border-left: 4px solid var(--primary); }
-    .research-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+
+    .section {
+      position: relative;
+      padding: 118px 0;
     }
-    .certificate-badge, .skill-badge {
+
+    .eyebrow {
       display: inline-flex;
       align-items: center;
-      background: #f0fdf4;
-      border-radius: 20px; padding: 5px 15px; margin: 5px;
-      border: 1px solid #d1fae5;
+      gap: 10px;
+      margin: 0 0 20px;
+      color: var(--signal-dark);
+      font-family: var(--mono);
+      font-size: 0.73rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      line-height: 1.4;
+      text-transform: uppercase;
     }
-    .conference-card { border-left: 4px solid var(--accent); }
-    .education-card { border-left: 4px solid var(--primary); transition: all 0.3s; }
-    .education-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-    .research-highlight {
-      background: linear-gradient(120deg, rgba(16,185,129,0.1), rgba(6,95,70,0.1));
-      border-left: 4px solid var(--primary);
+
+    .eyebrow::before {
+      width: 28px;
+      height: 1px;
+      content: "";
+      background: currentColor;
     }
-    .dark .research-highlight {
-      background: linear-gradient(120deg, rgba(16,185,129,0.08), rgba(6,95,70,0.08));
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.55fr);
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 64px;
     }
-    .dark .nav-link { color: #f3f4f6; }
-    .dark .nav-link.font-bold { color: #34d399 !important; }
-    #theme-toggle {
-      position: fixed; top: 1rem; right: 1rem; z-index: 60;
-      background: #fff; border-radius: 50%; box-shadow: 0 1px 8px rgba(16,185,129,0.18);
-      padding: 0.5rem 0.65rem;
-      transition: background 0.3s;
+
+    .section-heading h2 {
+      max-width: 800px;
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 500;
+      letter-spacing: -0.055em;
+      line-height: 0.9;
     }
-    .dark #theme-toggle { background: #23272f; }
-    #poster-slide-1, #poster-slide-2 { transition: opacity 1s; }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 50;
+      width: 100%;
+      border-bottom: 1px solid transparent;
+      transition: background 220ms ease, border-color 220ms ease, backdrop-filter 220ms ease;
+    }
+
+    .site-header.scrolled {
+      border-color: var(--line);
+      background: rgba(243, 239, 230, 0.88);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-shell {
+      display: flex;
+      min-height: 78px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand-mark {
+      position: relative;
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      overflow: hidden;
+      background: var(--ink);
+      color: var(--white);
+      border-radius: 50%;
+      font-family: var(--display);
+      font-size: 1.1rem;
+      letter-spacing: -0.08em;
+    }
+
+    .brand-mark::after {
+      position: absolute;
+      right: -8px;
+      bottom: -8px;
+      width: 22px;
+      height: 22px;
+      content: "";
+      border-radius: 50%;
+      background: var(--signal);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 8px 0;
+      color: var(--ink-soft);
+    }
+
+    .nav-links a::after {
+      position: absolute;
+      bottom: 3px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      content: "";
+      background: var(--signal);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 180ms ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .nav-contact {
+      padding: 10px 16px !important;
+      border: 1px solid var(--ink);
+      color: var(--ink) !important;
+    }
+
+    .nav-contact::after {
+      display: none;
+    }
+
+    .nav-contact:hover {
+      background: var(--ink);
+      color: var(--white) !important;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 42px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 26px;
+      height: 1px;
+      margin: 6px auto;
+      background: currentColor;
+      transition: transform 180ms ease, opacity 180ms ease;
+    }
+
+    .menu-toggle.open span:first-child {
+      transform: translateY(3.5px) rotate(45deg);
+    }
+
+    .menu-toggle.open span:last-child {
+      transform: translateY(-3.5px) rotate(-45deg);
+    }
+
+    .hero {
+      min-height: 100svh;
+      padding: 148px 0 80px;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      position: absolute;
+      top: -15vw;
+      right: -13vw;
+      width: min(54vw, 760px);
+      height: min(54vw, 760px);
+      content: "";
+      border: 1px solid rgba(23, 33, 29, 0.13);
+      border-radius: 50%;
+      box-shadow: 0 0 0 7vw rgba(23, 33, 29, 0.025), 0 0 0 14vw rgba(23, 33, 29, 0.02);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(310px, 0.55fr);
+      gap: 68px;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0 0 22px;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .status-dot {
+      position: relative;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--moss);
+    }
+
+    .status-dot::after {
+      position: absolute;
+      inset: -5px;
+      content: "";
+      border: 1px solid var(--moss);
+      border-radius: 50%;
+      animation: pulse 2s ease-out infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.8; transform: scale(0.55); }
+      70%, 100% { opacity: 0; transform: scale(1.25); }
+    }
+
+    .hero h1 {
+      max-width: 880px;
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(4.3rem, 10vw, 9.6rem);
+      font-weight: 500;
+      letter-spacing: -0.068em;
+      line-height: 0.78;
+    }
+
+    .hero h1 span {
+      display: block;
+      margin-left: clamp(30px, 9vw, 150px);
+      color: var(--signal);
+      font-style: italic;
+      white-space: nowrap;
+    }
+
+    .hero-intro {
+      max-width: 700px;
+      margin: 42px 0 0 clamp(30px, 9vw, 150px);
+      color: var(--ink-soft);
+      font-family: var(--display);
+      font-size: clamp(1.25rem, 2.2vw, 1.72rem);
+      line-height: 1.35;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 34px 0 0 clamp(30px, 9vw, 150px);
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 12px 20px;
+      border: 1px solid var(--ink);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      line-height: 1.2;
+      text-transform: uppercase;
+      transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .button-primary {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .button-primary:hover {
+      background: var(--signal);
+      border-color: var(--signal);
+    }
+
+    .button-light {
+      border-color: rgba(255, 253, 248, 0.5);
+      color: var(--white);
+    }
+
+    .button-light:hover {
+      background: var(--white);
+      color: var(--ink);
+    }
+
+    .arrow {
+      font-size: 1.15rem;
+      line-height: 1;
+    }
+
+    .hero-portrait-wrap {
+      position: relative;
+      align-self: stretch;
+      min-height: 600px;
+    }
+
+    .hero-portrait {
+      position: absolute;
+      inset: 0 0 55px 0;
+      overflow: hidden;
+      background: var(--paper-deep);
+      box-shadow: var(--shadow);
+      clip-path: polygon(0 0, 100% 9%, 100% 100%, 0 92%);
+    }
+
+    .hero-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: saturate(0.72) contrast(1.02);
+    }
+
+    .hero-portrait::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background: linear-gradient(180deg, transparent 55%, rgba(23, 33, 29, 0.32));
+    }
+
+    .hero-sectors {
+      position: absolute;
+      right: -16px;
+      bottom: 0;
+      z-index: 2;
+      width: min(310px, 90%);
+      padding: 22px;
+      background: var(--signal);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-sectors small {
+      display: block;
+      margin-bottom: 8px;
+      font-family: var(--mono);
+      font-size: 0.67rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .hero-sectors strong {
+      font-family: var(--display);
+      font-size: 1.45rem;
+      font-weight: 500;
+      line-height: 1.1;
+    }
+
+    .hero-index {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      color: rgba(23, 33, 29, 0.38);
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+
+    .about {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .about::before {
+      position: absolute;
+      top: 50px;
+      right: -100px;
+      width: 360px;
+      height: 360px;
+      content: "";
+      border: 1px solid rgba(255, 253, 248, 0.1);
+      border-radius: 50%;
+    }
+
+    .about .eyebrow {
+      color: #e69071;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(240px, 0.52fr) minmax(0, 1.25fr);
+      gap: clamp(60px, 10vw, 160px);
+    }
+
+    .about-title {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(2.8rem, 6vw, 5.8rem);
+      font-weight: 500;
+      letter-spacing: -0.05em;
+      line-height: 0.93;
+    }
+
+    .about-title em {
+      color: #e69071;
+      font-weight: 400;
+    }
+
+    .about-copy > p {
+      max-width: 800px;
+      margin: 0 0 26px;
+      color: rgba(255, 253, 248, 0.74);
+      font-family: var(--display);
+      font-size: clamp(1.25rem, 2vw, 1.62rem);
+      line-height: 1.45;
+    }
+
+    .about-copy > p:first-child {
+      color: var(--white);
+      font-size: clamp(1.75rem, 3.3vw, 3rem);
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+
+    .story-line {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 58px;
+      border-top: 1px solid rgba(255, 253, 248, 0.22);
+    }
+
+    .story-step {
+      position: relative;
+      padding: 24px 16px 0 0;
+      color: rgba(255, 253, 248, 0.62);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .story-step::before {
+      position: absolute;
+      top: -5px;
+      left: 0;
+      width: 9px;
+      height: 9px;
+      content: "";
+      border-radius: 50%;
+      background: #e69071;
+    }
+
+    .story-step:not(:last-child)::after {
+      content: "→";
+      float: right;
+      color: #e69071;
+    }
+
+    .experience {
+      background: var(--white);
+    }
+
+    .experience-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .experience-row {
+      display: grid;
+      grid-template-columns: 0.22fr 0.6fr 1fr;
+      gap: 34px;
+      align-items: start;
+      padding: 38px 0;
+      border-bottom: 1px solid var(--line);
+      transition: padding 220ms ease, background 220ms ease;
+    }
+
+    .experience-row:hover {
+      padding-inline: 20px;
+      background: var(--paper);
+    }
+
+    .company-logo {
+      display: grid;
+      width: 74px;
+      height: 74px;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .company-logo img {
+      width: 82%;
+      height: 82%;
+      object-fit: contain;
+    }
+
+    .company-logo-text {
+      background: var(--ink);
+      color: var(--white);
+      font-family: var(--display);
+      font-size: 1.5rem;
+    }
+
+    .experience-role h3 {
+      margin: 0 0 8px;
+      font-family: var(--display);
+      font-size: clamp(1.7rem, 2.8vw, 2.6rem);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 1;
+    }
+
+    .experience-role p,
+    .experience-copy p {
+      margin: 0;
+      color: var(--ink-soft);
+    }
+
+    .experience-role p {
+      font-family: var(--mono);
+      font-size: 0.71rem;
+      letter-spacing: 0.045em;
+      line-height: 1.6;
+      text-transform: uppercase;
+    }
+
+    .experience-copy p {
+      max-width: 650px;
+      font-size: 0.94rem;
+    }
+
+    .experience-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 6px 9px;
+      border: 1px solid var(--line);
+      font-family: var(--mono);
+      font-size: 0.61rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .projects {
+      overflow: hidden;
+    }
+
+    .projects::before {
+      position: absolute;
+      top: 185px;
+      right: 0;
+      width: 46%;
+      height: 1px;
+      content: "";
+      background: var(--line);
+    }
+
+    .project-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.7fr);
+      min-height: 500px;
+      margin-bottom: 22px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .project-feature-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(34px, 6vw, 72px);
+    }
+
+    .project-number {
+      margin-bottom: 50px;
+      color: #e69071;
+      font-family: var(--mono);
+      font-size: 0.73rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .project-feature h3 {
+      max-width: 680px;
+      margin: 0 0 24px;
+      font-family: var(--display);
+      font-size: clamp(3rem, 6vw, 5.9rem);
+      font-weight: 500;
+      letter-spacing: -0.055em;
+      line-height: 0.9;
+    }
+
+    .project-feature p {
+      max-width: 620px;
+      margin: 0;
+      color: rgba(255, 253, 248, 0.68);
+    }
+
+    .strategy-board {
+      position: relative;
+      display: grid;
+      min-height: 100%;
+      padding: 48px;
+      place-items: center;
+      overflow: hidden;
+      background: var(--signal);
+    }
+
+    .strategy-board::before,
+    .strategy-board::after {
+      position: absolute;
+      content: "";
+      border: 1px solid rgba(255, 253, 248, 0.42);
+      border-radius: 50%;
+    }
+
+    .strategy-board::before {
+      width: 420px;
+      height: 420px;
+    }
+
+    .strategy-board::after {
+      width: 240px;
+      height: 240px;
+    }
+
+    .strategy-center {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      width: 142px;
+      height: 142px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--display);
+      font-size: 1.28rem;
+      line-height: 1.05;
+      text-align: center;
+      transform: rotate(-8deg);
+    }
+
+    .strategy-label {
+      position: absolute;
+      z-index: 2;
+      padding: 7px 10px;
+      border: 1px solid rgba(255, 253, 248, 0.55);
+      color: var(--white);
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .strategy-label:nth-of-type(1) { top: 18%; left: 10%; }
+    .strategy-label:nth-of-type(2) { top: 25%; right: 7%; }
+    .strategy-label:nth-of-type(3) { right: 10%; bottom: 18%; }
+    .strategy-label:nth-of-type(4) { bottom: 13%; left: 8%; }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 22px;
+    }
+
+    .project-card {
+      position: relative;
+      min-height: 390px;
+      padding: 34px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--white);
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+
+    .project-card:hover {
+      z-index: 2;
+      box-shadow: var(--shadow);
+      transform: translateY(-8px) rotate(-0.6deg);
+    }
+
+    .project-card:nth-child(3n + 2):hover {
+      transform: translateY(-8px) rotate(0.6deg);
+    }
+
+    .project-card.wide {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr 0.78fr;
+      gap: 48px;
+      align-items: center;
+      min-height: 360px;
+    }
+
+    .project-card .project-number {
+      margin-bottom: 70px;
+      color: var(--signal-dark);
+    }
+
+    .project-card h3 {
+      max-width: 590px;
+      margin: 0 0 16px;
+      font-family: var(--display);
+      font-size: clamp(2rem, 3.7vw, 3.6rem);
+      font-weight: 500;
+      letter-spacing: -0.045em;
+      line-height: 0.98;
+    }
+
+    .project-card p {
+      max-width: 630px;
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+    }
+
+    .project-card-accent {
+      background: var(--paper-deep);
+    }
+
+    .market-visual {
+      position: absolute;
+      right: -45px;
+      bottom: -55px;
+      width: 250px;
+      height: 250px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+    }
+
+    .market-visual::before,
+    .market-visual::after {
+      position: absolute;
+      border-radius: 50%;
+      content: "";
+    }
+
+    .market-visual::before {
+      inset: 42px;
+      border: 28px solid var(--moss);
+      border-right-color: var(--signal);
+      transform: rotate(22deg);
+    }
+
+    .market-visual::after {
+      inset: 98px;
+      background: var(--white);
+    }
+
+    .forecast-visual {
+      display: grid;
+      min-height: 220px;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 7px;
+      align-items: end;
+      padding: 25px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .forecast-bar {
+      background: var(--moss);
+      transform-origin: bottom;
+      transition: transform 260ms ease, background 260ms ease;
+    }
+
+    .forecast-bar:nth-child(3n) {
+      background: var(--signal);
+    }
+
+    .project-card:hover .forecast-bar {
+      transform: scaleY(1.08);
+    }
+
+    .energy-projects {
+      margin-top: 80px;
+    }
+
+    .subheading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 30px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .subheading h3 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(2.3rem, 4vw, 4rem);
+      font-weight: 500;
+      letter-spacing: -0.045em;
+      line-height: 1;
+    }
+
+    .subheading span {
+      color: var(--ink-soft);
+      font-family: var(--mono);
+      font-size: 0.67rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .energy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .energy-card {
+      display: flex;
+      min-height: 420px;
+      flex-direction: column;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .energy-image {
+      height: 190px;
+      overflow: hidden;
+      background: var(--paper-deep);
+    }
+
+    .energy-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.65);
+      transition: filter 240ms ease, transform 450ms ease;
+    }
+
+    .energy-card:hover .energy-image img {
+      filter: saturate(1);
+      transform: scale(1.04);
+    }
+
+    .energy-content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 26px;
+    }
+
+    .energy-content small {
+      color: var(--signal-dark);
+      font-family: var(--mono);
+      font-size: 0.63rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .energy-content h4 {
+      margin: 16px 0 12px;
+      font-family: var(--display);
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 1;
+    }
+
+    .energy-content p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.85rem;
+    }
+
+    .education {
+      background: var(--paper-deep);
+    }
+
+    .learning-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+    }
+
+    .learning-card {
+      position: relative;
+      padding: clamp(34px, 5vw, 60px);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .learning-card.primary {
+      min-height: 520px;
+      background: var(--signal);
+      color: var(--white);
+    }
+
+    .learning-card.primary::after {
+      position: absolute;
+      right: -110px;
+      bottom: -140px;
+      width: 360px;
+      height: 360px;
+      content: "";
+      border: 70px solid rgba(255, 253, 248, 0.12);
+      border-radius: 50%;
+    }
+
+    .learning-card small {
+      display: block;
+      margin-bottom: 54px;
+      font-family: var(--mono);
+      font-size: 0.67rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .learning-card h3 {
+      max-width: 650px;
+      margin: 0 0 20px;
+      font-family: var(--display);
+      font-size: clamp(2.5rem, 5vw, 5.2rem);
+      font-weight: 500;
+      letter-spacing: -0.052em;
+      line-height: 0.92;
+    }
+
+    .learning-card p {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      margin: 0;
+      color: inherit;
+      opacity: 0.78;
+    }
+
+    .curriculum {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      max-width: 560px;
+      margin-top: 46px;
+    }
+
+    .curriculum span {
+      padding: 12px;
+      border: 1px solid rgba(255, 253, 248, 0.38);
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .learning-stack {
+      display: grid;
+      gap: 24px;
+    }
+
+    .learning-stack .learning-card {
+      min-height: 248px;
+    }
+
+    .learning-stack .learning-card small {
+      margin-bottom: 28px;
+      color: var(--signal-dark);
+    }
+
+    .learning-stack .learning-card h3 {
+      font-size: clamp(2rem, 3.7vw, 3.3rem);
+    }
+
+    .credentials-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 24px;
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .credential {
+      padding: 28px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 253, 248, 0.45);
+    }
+
+    .credential strong {
+      display: block;
+      margin-bottom: 8px;
+      font-family: var(--display);
+      font-size: 1.55rem;
+      font-weight: 500;
+      line-height: 1.15;
+    }
+
+    .credential span {
+      color: var(--ink-soft);
+      font-family: var(--mono);
+      font-size: 0.64rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .skills {
+      background: var(--white);
+    }
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: 0.6fr 1.4fr;
+      gap: clamp(60px, 9vw, 140px);
+    }
+
+    .skills-intro {
+      position: sticky;
+      top: 120px;
+      align-self: start;
+    }
+
+    .skills-intro h2 {
+      margin: 0 0 28px;
+      font-family: var(--display);
+      font-size: clamp(3rem, 6vw, 6rem);
+      font-weight: 500;
+      letter-spacing: -0.055em;
+      line-height: 0.9;
+    }
+
+    .skills-intro p {
+      margin: 0;
+      color: var(--ink-soft);
+    }
+
+    .skill-group {
+      display: grid;
+      grid-template-columns: 0.5fr 1fr;
+      gap: 30px;
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .skill-group:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .skill-group h3 {
+      margin: 0;
+      color: var(--signal-dark);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-list span {
+      padding: 8px 11px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      font-size: 0.78rem;
+    }
+
+    .technical-note {
+      margin-top: 26px;
+      padding: 22px;
+      border-left: 3px solid var(--signal);
+      background: var(--paper);
+      color: var(--ink-soft);
+      font-size: 0.84rem;
+    }
+
+    .contact {
+      overflow: hidden;
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .contact::after {
+      position: absolute;
+      top: -250px;
+      right: -200px;
+      width: 650px;
+      height: 650px;
+      content: "";
+      border: 1px solid rgba(255, 253, 248, 0.1);
+      border-radius: 50%;
+      box-shadow: 0 0 0 90px rgba(255, 253, 248, 0.025), 0 0 0 180px rgba(255, 253, 248, 0.018);
+    }
+
+    .contact-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 80px;
+      align-items: end;
+    }
+
+    .contact h2 {
+      max-width: 850px;
+      margin: 0 0 32px;
+      font-family: var(--display);
+      font-size: clamp(4rem, 9vw, 9rem);
+      font-weight: 500;
+      letter-spacing: -0.065em;
+      line-height: 0.78;
+    }
+
+    .contact h2 em {
+      display: block;
+      margin-left: clamp(25px, 8vw, 120px);
+      color: #e69071;
+      font-weight: 400;
+    }
+
+    .contact-copy {
+      max-width: 700px;
+      margin: 0 0 40px clamp(25px, 8vw, 120px);
+      color: rgba(255, 253, 248, 0.65);
+      font-family: var(--display);
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      line-height: 1.45;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-left: clamp(25px, 8vw, 120px);
+    }
+
+    .contact-details {
+      border-top: 1px solid rgba(255, 253, 248, 0.2);
+    }
+
+    .contact-link {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255, 253, 248, 0.2);
+      color: rgba(255, 253, 248, 0.72);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.03em;
+      word-break: break-word;
+    }
+
+    .contact-link:hover {
+      color: #e69071;
+    }
+
+    footer {
+      padding: 24px 0;
+      border-top: 1px solid rgba(255, 253, 248, 0.12);
+      background: var(--ink);
+      color: rgba(255, 253, 248, 0.45);
+      font-family: var(--mono);
+      font-size: 0.64rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 700ms cubic-bezier(0.2, 0.65, 0.25, 1), transform 700ms cubic-bezier(0.2, 0.65, 0.25, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .section-heading,
+      .hero-grid,
+      .about-grid,
+      .learning-grid,
+      .skills-layout,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading,
+      .about-grid,
+      .skills-layout,
+      .contact-grid {
+        gap: 45px;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 78px;
+        right: 0;
+        left: 0;
+        display: grid;
+        gap: 0;
+        padding: 16px 20px 26px;
+        border-bottom: 1px solid var(--line);
+        background: var(--paper);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-12px);
+        transition: opacity 180ms ease, transform 180ms ease;
+      }
+
+      .nav-links.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .nav-links a {
+        padding: 15px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-contact {
+        margin-top: 12px;
+        text-align: center;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero {
+        padding-top: 125px;
+      }
+
+      .hero-grid {
+        gap: 70px;
+      }
+
+      .hero-portrait-wrap {
+        min-height: 670px;
+      }
+
+      .hero-portrait {
+        max-width: 540px;
+      }
+
+      .hero-sectors {
+        right: auto;
+        left: 450px;
+      }
+
+      .experience-row {
+        grid-template-columns: 100px 0.7fr 1fr;
+      }
+
+      .energy-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .energy-card:last-child {
+        grid-column: span 2;
+      }
+
+      .skills-intro {
+        position: static;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .section {
+        padding: 86px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 45px;
+      }
+
+      .hero h1 {
+        font-size: clamp(4rem, 21vw, 6.2rem);
+      }
+
+      .hero h1 span,
+      .hero-intro,
+      .hero-actions {
+        margin-left: 0;
+      }
+
+      .hero h1 span {
+        margin-top: 6px;
+        white-space: normal;
+      }
+
+      .hero-portrait-wrap {
+        min-height: 540px;
+      }
+
+      .hero-portrait {
+        right: 20px;
+      }
+
+      .hero-sectors {
+        right: 0;
+        left: auto;
+      }
+
+      .hero-index {
+        display: none;
+      }
+
+      .story-line {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 30px;
+      }
+
+      .story-step:nth-child(2)::after {
+        display: none;
+      }
+
+      .experience-row {
+        grid-template-columns: 74px 1fr;
+        gap: 22px;
+      }
+
+      .experience-copy {
+        grid-column: 1 / -1;
+      }
+
+      .company-logo {
+        width: 64px;
+        height: 64px;
+      }
+
+      .project-feature,
+      .project-grid,
+      .project-card.wide {
+        grid-template-columns: 1fr;
+      }
+
+      .strategy-board {
+        min-height: 430px;
+      }
+
+      .project-card,
+      .project-card.wide {
+        grid-column: auto;
+      }
+
+      .forecast-visual {
+        margin-top: 10px;
+      }
+
+      .subheading {
+        display: block;
+      }
+
+      .subheading span {
+        display: block;
+        margin-top: 12px;
+      }
+
+      .energy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .energy-card:last-child {
+        grid-column: auto;
+      }
+
+      .credentials-row {
+        grid-template-columns: 1fr;
+      }
+
+      .skill-group {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .contact h2 em,
+      .contact-copy,
+      .contact-actions {
+        margin-left: 0;
+      }
+
+      .footer-row {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand-text {
+        display: none;
+      }
+
+      .hero-actions .button,
+      .contact-actions .button {
+        width: 100%;
+      }
+
+      .hero-portrait-wrap {
+        min-height: 470px;
+      }
+
+      .hero-sectors {
+        width: 84%;
+      }
+
+      .curriculum,
+      .story-line {
+        grid-template-columns: 1fr;
+      }
+
+      .story-step::after {
+        display: none;
+      }
+
+      .strategy-board {
+        min-height: 360px;
+        padding: 20px;
+      }
+
+      .strategy-board::before {
+        width: 320px;
+        height: 320px;
+      }
+
+      .strategy-board::after {
+        width: 190px;
+        height: 190px;
+      }
+
+      .strategy-label:nth-of-type(1) { top: 12%; left: 4%; }
+      .strategy-label:nth-of-type(2) { top: 22%; right: 2%; }
+      .strategy-label:nth-of-type(3) { right: 2%; bottom: 14%; }
+      .strategy-label:nth-of-type(4) { bottom: 9%; left: 3%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
   </style>
 </head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<body id="body" class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <header class="site-header" id="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="#home" aria-label="Mohamed Asaad home">
+        <span class="brand-mark">MA</span>
+        <span class="brand-text">Mohamed Asaad</span>
+      </a>
 
-<!-- Theme Toggle -->
-<button id="theme-toggle" class="text-xl text-emerald-600 dark:text-yellow-400 hover:scale-110 transition" onclick="toggleDarkMode()">
-  <i id="theme-icon" class="fas fa-moon"></i>
-</button>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+      </button>
 
-<!-- Navigation/Header -->
-<header class="bg-white/90 dark:bg-[#171c22]/90 backdrop-blur-md shadow-lg border-b border-emerald-800/10 fixed top-0 left-0 w-full z-50">
-  <!-- Optional: Accent Bar (can remove if not needed) -->
-  <!-- <div class="h-1 bg-gradient-to-r from-emerald-500 via-emerald-300 to-yellow-400"></div> -->
-  <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
-    <!-- Logo with icon -->
-    <a href="#" class="text-2xl font-bold flex items-center gradient-text">
-      <span class="inline-flex items-center justify-center w-10 h-10 bg-emerald-900 dark:bg-emerald-700 rounded-full mr-2 shadow-md">
-        <i class="fas fa-bolt text-emerald-600 dark:text-emerald-400 text-lg animate-pulse"></i>
-      </span>
-      Mohamed Asaad
-    </a>
-    <!-- Desktop Nav -->
-    <div class="hidden md:flex space-x-6">
-      <a href="#home" class="nav-link font-semibold text-gray-900 dark:text-white transition-all">Home</a>
-      <a href="#about" class="nav-link font-semibold text-gray-900 dark:text-white transition-all">About</a>
-      <a href="#education" class="nav-link font-semibold text-gray-900 dark:text-white transition-all">Education</a>
-      <a href="#skills" class="nav-link font-semibold text-gray-900 dark:text-white transition-all">Skills</a>
-      <a href="#experience" class="nav-link font-semibold text-gray-900 dark:text-white transition-all">Experience</a>
-      <a href="#projects" class="nav-link font-semibold text-gray-900 dark:text-white transition-all">Projects</a>
-      <a href="#certificates" class="nav-link font-semibold text-gray-900 dark:text-white transition-all">Certificates</a>
-      <a href="#volunteering" class="nav-link font-semibold text-gray-900 dark:text-white transition-all">Volunteering</a>
-      <a href="#conferences" class="nav-link font-semibold text-gray-900 dark:text-white transition-all">Conferences</a>
-      <a href="#contact" class="nav-link font-semibold text-gray-900 dark:text-white transition-all">Contact</a>
+      <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Development</a>
+        <a href="#skills">Skills</a>
+        <a class="nav-contact" href="#contact">Contact</a>
+      </nav>
     </div>
-    <!-- Theme Switcher -->
-    <button id="theme-toggle" class="ml-4 text-2xl text-yellow-400 dark:text-emerald-600 dark:text-emerald-400 hover:scale-110 transition" onclick="toggleDarkMode()">
-      <i id="theme-icon" class="fas fa-moon"></i>
-    </button>
-    <!-- Mobile menu button -->
-    <button id="mobile-menu-button" class="md:hidden text-emerald-700 dark:text-emerald-600 dark:text-emerald-400 ml-3">
-      <i class="fas fa-bars text-2xl"></i>
-    </button>
-  </nav>
-  <!-- Mobile Nav -->
-  <div id="mobile-menu" class="mobile-menu bg-white dark:bg-[#171c22] md:hidden shadow-lg">
-    <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
-      <a href="#home" class="py-2 border-b border-gray-100 dark:border-gray-700 font-semibold">Home</a>
-      <a href="#about" class="py-2 border-b border-gray-100 dark:border-gray-700 font-semibold">About</a>
-      <a href="#education" class="py-2 border-b border-gray-100 dark:border-gray-700 font-semibold">Education</a>
-      <a href="#skills" class="py-2 border-b border-gray-100 dark:border-gray-700 font-semibold">Skills</a>
-      <a href="#experience" class="py-2 border-b border-gray-100 dark:border-gray-700 font-semibold">Experience</a>
-      <a href="#projects" class="py-2 border-b border-gray-100 dark:border-gray-700 font-semibold">Projects</a>
-      <a href="#certificates" class="py-2 border-b border-gray-100 dark:border-gray-700 font-semibold">Certificates</a>
-      <a href="#volunteering" class="py-2 border-b border-gray-100 dark:border-gray-700 font-semibold">Volunteering</a>
-      <a href="#conferences" class="py-2 border-b border-gray-100 dark:border-gray-700 font-semibold">Conferences</a>
-      <a href="#contact" class="py-2 font-semibold">Contact</a>
-    </div>
-  </div>
-</header>
+  </header>
 
-<!-- Add this style for animated underline -->
-<style>
-  .nav-link {
-    position: relative;
-    padding-bottom: 5px;
-    transition: color 0.2s;
-  }
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 0;
-    height: 2.5px;
-    background: linear-gradient(90deg, #10b981 30%, #f59e0b 100%);
-    border-radius: 2px;
-    transform: translateX(-50%);
-    transition: width 0.3s;
-  }
-  .nav-link:hover::after,
-  .nav-link.active::after {
-    width: 80%;
-  }
-  .nav-link.active,
-  .nav-link:hover {
-    color: #10b981 !important;
-  }
-</style>
-
-
-<!-- Hero Section -->
-<section id="home" class="pt-32 pb-20 hero-gradient text-white relative overflow-hidden">
-  <div class="absolute top-0 left-0 w-full h-full opacity-10">
-    <div class="absolute top-20 left-20 w-40 h-40 rounded-full bg-white"></div>
-    <div class="absolute bottom-40 right-20 w-60 h-60 rounded-full bg-white"></div>
-    <div class="absolute top-1/2 left-1/4 w-32 h-32 rounded-full bg-white"></div>
-  </div>
-  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-    <div class="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Mohamed Asaad</h1>
-      <h2 class="text-2xl md:text-3xl font-light mb-6">Electrical Engineer</h2>
-      <p class="text-lg mb-8 max-w-xl">
-        Specializing in transformer design, R&D innovation, and renewable energy solutions.
-        Passionate about sustainable energy and smart grid transformation.
-      </p>
-      <div class="flex flex-wrap justify-center md:justify-start gap-4">
-        <a href="#contact" class="bg-white text-emerald-700 hover:bg-gray-100 px-6 py-3 rounded-full font-semibold shadow-lg transition transform hover:scale-105">
-          <i class="fas fa-envelope mr-2"></i>Contact Me
-        </a>
-       <a href="mohamed asaad resume.pdf" download class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-emerald-700 px-6 py-3 rounded-full font-semibold shadow-lg transition transform hover:scale-105">
-<i class="fas fa-download mr-2"></i>Download Resume
-</a>
-      </div>
-      <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-6">
-        <a href="https://wa.me/201005678356" target="_blank" class="flex items-center">
-          <i class="fab fa-whatsapp text-2xl mr-2"></i>
-          <span>+20 100 567 8356</span>
-        </a>
-        <a href="mailto:muhammed_asaad@outlook.com" class="flex items-center">
-          <i class="fas fa-envelope text-2xl mr-2"></i>
-          <span>muhammed_asaad@outlook.com</span>
-        </a>
-        <a href="tel:+201005678356" class="flex items-center">
-          <i class="fas fa-phone text-2xl mr-2"></i>
-          <span>+20 100 567 8356</span>
-        </a>
-      </div>
-    </div>
-    <div class="md:w-1/2 flex justify-center">
-      <div class="relative">
-        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl">
-          <img
-            src="images/profilepicture.jpg"
-            alt="Mohamed Asaad"
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <div class="absolute -bottom-4 -right-4 bg-emerald-500 text-white px-4 py-2 rounded-full font-bold">
-          <i class="fas fa-bolt mr-2"></i>Available for work
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- About Section -->
-<section id="about" class="py-16 bg-white dark:bg-[#171c22]">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">About Me</h2>
-    <div class="flex flex-col md:flex-row items-center gap-10">
-      <div class="md:w-1/3 flex justify-center">
-        <div class="w-64 h-64 rounded-xl logo-placeholder flex items-center justify-center">
-          <div class="text-center p-4">
-            <div class="w-24 h-24 mx-auto mb-4">
-              <img src="images/mylogo.png" alt="Mohamed Asaad Logo" class="w-full h-full object-contain rounded-full" />
-            </div>
-            <h3 class="text-xl font-bold text-white">Mohamed Asaad</h3>
-          </div>
-        </div>
-      </div>
-      <div class="md:w-2/3">
-        <p class="text-lg mb-6">
-          I am an Electrical Engineer with a strong specialization in transformer design, R&D innovation, and comprehensive renewable energy solutions. My expertise spans power systems and electrical design, driven by a commitment to sustainable practices and optimized energy performance.
-        </p>
-        <p class="text-lg mb-6">
-          Currently, I serve as an Electrical Design & R&D Engineer at TECTRAFO, where I play a pivotal role in leading research and development activities focused on advanced transformer technologies. My work involves performance optimization, driving new product innovation, and actively supporting the evolution of sustainable energy infrastructure.
-        </p>
-        <p class="text-lg mb-6">
-          Academically, I am furthering my knowledge by pursuing a Master of Science in Electrical Power & Machines Engineering at Ain Shams University. My ongoing research centers on Energy Management for Smart Buildings, seamlessly integrating academic insights with practical engineering applications.
-        </p>
-        <p class="text-lg mb-8">
-          My professional experience is robust, covering key areas such as transformer design optimization, in-depth power quality assessment, solar PV system design (both grid-connected and off-grid solutions), and enhancing industrial energy efficiency. I also possess proficiency in low voltage systems, project management, and essential software like AutoCAD, ETAP, Revit, and PSCAD.
-        </p>
-        <p class="text-lg mb-8">
-          I am deeply passionate about fostering sustainable innovation, contributing to smart grid transformation, and consistently delivering engineering excellence that addresses current and future energy demands. Always eager for new collaborations, technical discussions, and opportunities, I aim to push the boundaries of what energy engineering can achieve, particularly within the dynamic markets of Egypt and the UAE.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Education Section -->
-<section id="education" class="py-16 bg-gray-100 dark:bg-[#23272f]">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Education</h2>
-    <div class="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
-      <!-- MSc -->
-      <div class="bg-white dark:bg-[#171c22] p-8 rounded-xl shadow-lg education-card">
-        <div class="flex items-start">
-          <div class="w-16 h-16 rounded-full overflow-hidden bg-white mr-6">
-            <img src="images/engasu.png" alt="Faculty of Engineering Logo" class="w-full h-full object-contain" />
-          </div>
-          <div>
-            <h3 class="text-2xl font-bold text-emerald-700 mb-2 dark:text-emerald-600 dark:text-emerald-400">Master of Science in Electrical Power & Machines Engineering</h3>
-            <p class="text-lg font-medium mb-2">Ain Shams University</p>
-            <p class="text-gray-700 mb-4 dark:text-gray-400">2024 – Present | Cairo, Egypt</p>
-            <p class="mb-4">
-              Research Focus: Energy Management for Smart Buildings using Hybrid LSTM-XGBoost forecasting and Hierarchical Multi-Agent Reinforcement Learning framework.
-            </p>
-            <div class="research-highlight p-4 rounded-lg">
-              <h4 class="font-bold mb-2">Research Highlights:</h4>
-              <ul class="list-disc ml-6">
-                <li>Hybrid LSTM-XGBoost model for 15-minute load forecasting</li>
-                <li>Hierarchical Multi-Agent Reinforcement Learning (HMARL) framework</li>
-                <li>Real-time energy management for smart grids</li>
-                <li>Dynamic resource allocation and cost reduction strategies</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- BSc -->
-      <div class="bg-white dark:bg-[#171c22] p-8 rounded-xl shadow-lg education-card">
-        <div class="flex items-start">
-          <div class="w-16 h-16 rounded-full overflow-hidden bg-white mr-6">
-            <img src="images/engasu.png" alt="Faculty of Engineering Logo" class="w-full h-full object-contain" />
-          </div>
-          <div>
-            <h3 class="text-2xl font-bold text-emerald-700 mb-2 dark:text-emerald-600 dark:text-emerald-400">Bachelor of Science in Electrical Power & Machines Engineering</h3>
-            <p class="text-lg font-medium mb-2">Ain Shams University</p>
-            <p class="text-gray-700 mb-4 dark:text-gray-400">2017 – 2022 | Cairo, Egypt</p>
-            <p class="mb-2">
-              Graduation Project: <span class="font-semibold">Integrated Power Quality Assessment and PV Solution for Industrial Facilities</span>
-            </p>
-            <p>
-              Relevant Coursework: Power Systems Analysis, Renewable Energy Systems, Electrical Machines, Control Systems, Power Electronics, Digital Signal Processing
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Skills Section -->
-<section id="skills" class="py-16 bg-white dark:bg-[#171c22]">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Skills & Expertise</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Technical Skills -->
-      <div class="bg-gray-100 dark:bg-[#23272f] p-8 rounded-xl shadow-lg">
-        <h3 class="text-2xl font-bold text-emerald-700 dark:text-emerald-600 dark:text-emerald-400 mb-6 flex items-center">
-          <i class="fas fa-cogs mr-3"></i> Technical Skills
-        </h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Transformer Design & Optimization</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Research and Development (R&D)</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Power System Analysis (ETAP, PSCAD)</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Solar PV System Design (PVSyst)</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Industrial Energy Efficiency</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Energy Management Systems</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>AutoCAD, Revit, Dialux Evo</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>MATLAB, Python</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Technical Documentation</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Compliance (IEC, IEEE)</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>SAP ERP</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Office 365, Photoshop, Filmora</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Premiere Pro, After Effects</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Data Analytics (XGBoost, LSTM)</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Project Management</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Low Voltage Systems (Fire Alarm, CCTV, Access)</div>
-        </div>
-      </div>
-      <!-- Soft Skills -->
-      <div class="bg-gray-100 dark:bg-[#23272f] p-8 rounded-xl shadow-lg">
-        <h3 class="text-2xl font-bold text-emerald-700 dark:text-emerald-600 dark:text-emerald-400 mb-6 flex items-center">
-          <i class="fas fa-users mr-3"></i> Soft Skills
-        </h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Communication</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Creativity</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Leadership</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Teamwork</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Problem Solving</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Time Management</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Eager to Learn</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Adaptability</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Presentation</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Client Relations</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Technical Writing</div>
-          <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Project Management</div>
-        </div>
-        <div class="mt-8">
-          <h4 class="text-xl font-bold text-emerald-700 dark:text-emerald-600 dark:text-emerald-400 mb-4 flex items-center">
-            <i class="fas fa-language mr-3"></i> Languages
-          </h4>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>Arabic: Native</div>
-            <div class="flex items-center"><i class="fas fa-check-circle text-emerald-500 mr-3"></i>English: Proficient </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Experience Section -->
-<section id="experience" class="py-16 bg-gray-100 dark:bg-[#23272f]">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Professional Experience</h2>
-    <div class="space-y-10">
-      <!-- TEC TRAFO - R&D -->
-      <div class="bg-white dark:bg-[#171c22] rounded-xl shadow-lg flex flex-col md:flex-row items-center p-6 gap-6 experience-card">
-        <div class="w-20 h-20 rounded-lg shadow-md overflow-hidden">
-          <img src="images/tectrafo.png" alt="TECTRAFO Logo" class="w-full h-full object-contain" />
-        </div>
+  <main id="main">
+    <section class="section hero" id="home">
+      <div class="container hero-grid">
         <div>
-          <h3 class="font-bold text-xl mb-1">Research & Development Engineer</h3>
-          <p class="text-sm text-gray-700 mb-2 dark:text-gray-400">TECTRAFO | Apr 2025 – Present, Cairo</p>
-          <ul class="list-disc ml-6 text-gray-700 dark:text-gray-400">
-            <li>Leading R&D initiatives to enhance transformer design methodologies and performance</li>
-            <li>Developing custom transformer design software using Python and Excel</li>
-            <li>Implementing improvements that reduced design errors and improved accuracy</li>
-            <li>Managing renewable & energy storage transformer projects</li>
-            <li>Driving product innovation and new solutions development</li>
-          </ul>
+          <p class="hero-kicker reveal"><span class="status-dot"></span> Commercial &amp; Business Development Professional</p>
+          <h1 class="reveal">Commercial <span>&amp; Business</span> Development</h1>
+          <p class="hero-intro reveal">I work at the intersection of energy, technology, and business — combining industry experience with market research, commercial strategy, digital solutions, and stakeholder communication.</p>
+          <div class="hero-actions reveal">
+            <a class="button button-primary" href="#experience">View experience <span class="arrow">↘</span></a>
+            <a class="button" href="#projects">Explore projects</a>
+            <a class="button" href="mohamed asaad resume.pdf" download>Download CV</a>
+          </div>
+        </div>
+
+        <div class="hero-portrait-wrap reveal">
+          <span class="hero-index">Portfolio / 2026</span>
+          <div class="hero-portrait">
+            <img src="images/profilepicture.jpg" alt="Portrait of Mohamed Asaad">
+          </div>
+          <div class="hero-sectors">
+            <small>Professional focus</small>
+            <strong>Energy · Digital Solutions · Technology</strong>
+          </div>
         </div>
       </div>
-      <!-- TEC TRAFO - Design -->
-      <div class="bg-white dark:bg-[#171c22] rounded-xl shadow-lg flex flex-col md:flex-row items-center p-6 gap-6 experience-card">
-        <div class="w-20 h-20 rounded-lg shadow-md overflow-hidden">
-          <img src="images/tectrafo.png" alt="TECTRAFO Logo" class="w-full h-full object-contain" />
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="reveal">
+          <p class="eyebrow">About</p>
+          <h2 class="about-title">Technical depth.<br><em>Commercial direction.</em></h2>
         </div>
+        <div class="about-copy reveal">
+          <p>I translate technical products, industry needs, and complex information into clear business value.</p>
+          <p>My engineering foundation gives me practical credibility in the energy and industrial technology sectors. I now build on that foundation through commercial thinking, market research, marketing strategy, digital transformation, and business communication.</p>
+          <p>The direction is deliberate: using hands-on industry experience to understand customers, support product positioning, communicate with stakeholders, and contribute to growth across energy and technology markets.</p>
+          <div class="story-line" aria-label="Career progression">
+            <span class="story-step">Engineering</span>
+            <span class="story-step">Energy Industry</span>
+            <span class="story-step">Digital &amp; Technology</span>
+            <span class="story-step">Business &amp; Commercial</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section experience" id="experience">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Experience</p>
+            <h2>Industry experience, reframed for growth.</h2>
+          </div>
+          <p>Technical experience remains a competitive advantage — evidence of sector understanding, cross-functional work, operational awareness, and the ability to engage with complex products.</p>
+        </div>
+
+        <div class="experience-list">
+          <article class="experience-row reveal">
+            <div class="company-logo company-logo-text" aria-hidden="true">HE</div>
+            <div class="experience-role">
+              <h3>Hitachi Energy</h3>
+              <p>Energy Technology</p>
+            </div>
+            <div class="experience-copy">
+              <p>Experience within a global energy technology environment, strengthening my understanding of how engineering, customer requirements, market priorities, and business execution connect across the energy value chain.</p>
+              <div class="experience-tags">
+                <span class="tag">Energy markets</span>
+                <span class="tag">Customer value</span>
+                <span class="tag">Cross-functional work</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="experience-row reveal">
+            <div class="company-logo"><img src="images/tectrafo.png" alt="TEC TRAFO logo"></div>
+            <div class="experience-role">
+              <h3>TEC TRAFO</h3>
+              <p>Design &amp; R&amp;D · 2024–2025</p>
+            </div>
+            <div class="experience-copy">
+              <p>Collaborated across technical, operational, and business functions to support product development, customer requirements, proposals, documentation, and commercial objectives. Contributed to digital design tools and product improvement initiatives.</p>
+              <div class="experience-tags">
+                <span class="tag">Product development</span>
+                <span class="tag">Customer requirements</span>
+                <span class="tag">Digital tools</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="experience-row reveal">
+            <div class="company-logo"><img src="images/ison.png" alt="iSON Xperiences logo"></div>
+            <div class="experience-role">
+              <h3>iSON Xperiences</h3>
+              <p>Facilities &amp; Operations · 2024–2025</p>
+            </div>
+            <div class="experience-copy">
+              <p>Supported business continuity through facility operations, maintenance planning, vendor coordination, system upgrades, and energy optimization in a customer-experience environment where reliability directly influenced service delivery.</p>
+              <div class="experience-tags">
+                <span class="tag">Operations</span>
+                <span class="tag">Vendor coordination</span>
+                <span class="tag">Business continuity</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="experience-row reveal">
+            <div class="company-logo"><img src="images/arab_international_optical_company.png" alt="Arab International Optronics logo"></div>
+            <div class="experience-role">
+              <h3>Arab International Optronics</h3>
+              <p>Production · 2023–2024</p>
+            </div>
+            <div class="experience-copy">
+              <p>Worked within production and quality environments, coordinating technical support for industrial lines and developing a practical understanding of operations, quality expectations, delivery priorities, and internal stakeholder needs.</p>
+              <div class="experience-tags">
+                <span class="tag">Production</span>
+                <span class="tag">Quality</span>
+                <span class="tag">Stakeholder support</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Selected Work</p>
+            <h2>Business thinking made visible.</h2>
+          </div>
+          <p>A project portfolio built around market understanding, commercial communication, digital decision-making, and energy-sector applications.</p>
+        </div>
+
+        <article class="project-feature reveal">
+          <div class="project-feature-copy">
+            <div>
+              <div class="project-number">01 / Business &amp; Marketing</div>
+              <h3>Strategic Marketing Plan — Digital Energy Solution</h3>
+              <p>A structured route from customer problem to value proposition, positioning, market communication, and go-to-market priorities for a digital energy offering.</p>
+            </div>
+            <div class="experience-tags">
+              <span class="tag">Segmentation</span>
+              <span class="tag">Positioning</span>
+              <span class="tag">Go-to-market</span>
+              <span class="tag">Value proposition</span>
+            </div>
+          </div>
+          <div class="strategy-board" aria-label="Strategy framework illustration">
+            <span class="strategy-label">Customer</span>
+            <span class="strategy-label">Market</span>
+            <span class="strategy-label">Message</span>
+            <span class="strategy-label">Growth</span>
+            <span class="strategy-center">Digital<br>Energy<br>Value</span>
+          </div>
+        </article>
+
+        <div class="project-grid">
+          <article class="project-card project-card-accent reveal">
+            <div class="project-number">02 / Market Research</div>
+            <h3>Egyptian Online Grocery Market</h3>
+            <p>Market structure, customer behavior, competitor positioning, and opportunity analysis translated into a concise commercial view of a fast-changing digital category.</p>
+            <div class="market-visual" aria-hidden="true"></div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-number">03 / Business Communication</div>
+            <h3>Executive Business Presentation</h3>
+            <p>Complex research and technical material shaped into a clear leadership narrative — connecting evidence, commercial implications, and recommended actions.</p>
+          </article>
+
+          <article class="project-card wide reveal">
+            <div>
+              <div class="project-number">04 / Digital &amp; AI</div>
+              <h3>AI Demand Forecasting for Better Decisions</h3>
+              <p>Hybrid forecasting concepts applied to energy demand, with a commercial lens on cost, resource allocation, operational planning, and data-driven decision-making.</p>
+              <div class="experience-tags">
+                <span class="tag">LSTM–XGBoost</span>
+                <span class="tag">Demand planning</span>
+                <span class="tag">Data storytelling</span>
+              </div>
+            </div>
+            <div class="forecast-visual" aria-label="Illustrative demand forecast chart">
+              <span class="forecast-bar" style="height: 35%"></span>
+              <span class="forecast-bar" style="height: 48%"></span>
+              <span class="forecast-bar" style="height: 42%"></span>
+              <span class="forecast-bar" style="height: 61%"></span>
+              <span class="forecast-bar" style="height: 55%"></span>
+              <span class="forecast-bar" style="height: 73%"></span>
+              <span class="forecast-bar" style="height: 68%"></span>
+              <span class="forecast-bar" style="height: 82%"></span>
+              <span class="forecast-bar" style="height: 70%"></span>
+              <span class="forecast-bar" style="height: 88%"></span>
+              <span class="forecast-bar" style="height: 76%"></span>
+              <span class="forecast-bar" style="height: 94%"></span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-number">05 / Brand Strategy</div>
+            <h3>Professional Portfolio &amp; Personal Branding</h3>
+            <p>A coherent professional narrative that connects engineering, energy, technology, and commercial ambition across portfolio, CV, and LinkedIn communication.</p>
+          </article>
+
+          <article class="project-card project-card-accent reveal">
+            <div class="project-number">06 / Commercial Analysis</div>
+            <h3>Energy &amp; Digital Solutions</h3>
+            <p>Exploring how digital tools, energy management, and customer needs can come together in practical offers with measurable operational and business value.</p>
+          </article>
+        </div>
+
+        <div class="energy-projects">
+          <div class="subheading reveal">
+            <h3>Energy &amp; technical foundation</h3>
+            <span>Supporting credibility, not the headline</span>
+          </div>
+          <div class="energy-grid">
+            <article class="energy-card reveal">
+              <div class="energy-image"><img src="images/master.png" alt="Energy forecasting and management project"></div>
+              <div class="energy-content">
+                <small>Energy Management</small>
+                <h4>Smart Building Forecasting</h4>
+                <p>Research into forecasting and resource allocation for smarter, more efficient energy decisions.</p>
+              </div>
+            </article>
+            <article class="energy-card reveal">
+              <div class="energy-image"><img src="images/sp1.png" alt="Solar PV system integration project"></div>
+              <div class="energy-content">
+                <small>Renewable Energy</small>
+                <h4>PV System Integration</h4>
+                <p>A complete solar study connecting site assessment, system design, performance, and energy value.</p>
+              </div>
+            </article>
+            <article class="energy-card reveal">
+              <div class="energy-image"><img src="images/taicon.png" alt="Transformer design software icon"></div>
+              <div class="energy-content">
+                <small>Digital Product</small>
+                <h4>Transformer Design Software</h4>
+                <p>A custom tool that automated engineering calculations and supported a more accurate product-development workflow.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section education" id="education">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Education &amp; Development</p>
+            <h2>Building the business toolkit.</h2>
+          </div>
+          <p>Formal engineering education supported by focused development in marketing, research, communication, digital thinking, and commercial fundamentals.</p>
+        </div>
+
+        <div class="learning-grid">
+          <article class="learning-card primary reveal">
+            <small>AUC Business Acumen Program</small>
+            <h3>Commercial knowledge for real market decisions.</h3>
+            <p>A focused business foundation that strengthens how I evaluate markets, communicate value, understand customers, and support sales and growth conversations.</p>
+            <div class="curriculum">
+              <span>Principles of Marketing</span>
+              <span>Marketing Research</span>
+              <span>Marketing Communication</span>
+              <span>Sales Principles</span>
+            </div>
+          </article>
+
+          <div class="learning-stack">
+            <article class="learning-card reveal">
+              <small>Ain Shams University · 2024–Present</small>
+              <h3>MSc, Electrical Power &amp; Machines</h3>
+              <p>Research focus: smart-building energy management, AI forecasting, and intelligent resource allocation.</p>
+            </article>
+            <article class="learning-card reveal">
+              <small>Ain Shams University · 2017–2022</small>
+              <h3>BSc, Electrical Power &amp; Machines</h3>
+              <p>Engineering foundation across power systems, renewable energy, control, machines, and industrial applications.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="credentials-row reveal">
+          <div class="credential">
+            <strong>Fundamentals of Digital Marketing</strong>
+            <span>Google Digital Garage · 2023</span>
+          </div>
+          <div class="credential">
+            <strong>Renewable Energy Entrepreneurship</strong>
+            <span>Duke University · 2024</span>
+          </div>
+          <div class="credential">
+            <strong>Employability &amp; Communication</strong>
+            <span>ASU Career Center · 2022</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills" id="skills">
+      <div class="container skills-layout">
+        <div class="skills-intro reveal">
+          <p class="eyebrow">Capabilities</p>
+          <h2>Where I create value.</h2>
+          <p>A cross-disciplinary profile designed for commercial roles in technical and fast-moving markets.</p>
+        </div>
+
         <div>
-          <h3 class="font-bold text-xl mb-1">Electrical Design Engineer</h3>
-          <p class="text-sm text-gray-700 mb-2 dark:text-gray-400">TECTRAFO | Jun 2024 – Apr 2025, Cairo</p>
-          <ul class="list-disc ml-6 text-gray-700 dark:text-gray-400">
-            <li>Designed and optimized transformers according to IEC & IEEE standards</li>
-            <li>Produced technical drawings and specifications using AutoCAD and Excel</li>
-            <li>Prepared datasheets, compliance documentation, and project proposals</li>
-            <li>Collaborated with manufacturing teams to ensure design feasibility</li>
-            <li>Conducted transformer performance testing and validation</li>
-          </ul>
-        </div>
-      </div>
-      <!-- iSON Xperiences -->
-      <div class="bg-white dark:bg-[#171c22] rounded-xl shadow-lg flex flex-col md:flex-row items-center p-6 gap-6 experience-card">
-        <div class="w-20 h-20 rounded-lg shadow-md overflow-hidden">
-          <img src="images/ison.png" alt="iSON Xperiences Logo" class="w-full h-full object-contain" />
-        </div>
-        <div>
-          <h3 class="font-bold text-xl mb-1">Electrical Engineer (Facility & Maintenance)</h3>
-          <p class="text-sm text-gray-700 mb-2 dark:text-gray-400">iSON Xperiences | Aug 2024 – Apr 2025, Cairo</p>
-          <ul class="list-disc ml-6 text-gray-700 dark:text-gray-400">
-            <li>Managed facility maintenance, troubleshooting & energy optimization</li>
-            <li>Implemented preventive schedules, compliance, and safety protocols</li>
-            <li>Oversaw system upgrades (UPS, generator, HVAC)</li>
-            <li>Provided electrical support for critical infrastructure</li>
-            <li>Developed power optimization strategies</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Training & Early Work Section -->
-<section id="training" class="py-16 bg-white dark:bg-[#171c22]">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Training & Early Work</h2>
-    <div class="space-y-10">
-      <!-- Arab International Optical -->
-      <div class="bg-white dark:bg-[#171c22] rounded-xl shadow-lg flex flex-col md:flex-row items-center p-6 gap-6 experience-card">
-        <div class="w-20 h-20 rounded-lg shadow-md overflow-hidden">
-          <img src="images/arab_international_optical_company.png" alt="Arab International Optical Company Logo" class="w-full h-full object-contain" />
-        </div>
-        <div>
-          <h3 class="font-bold text-xl mb-1">Production Electrical Engineer (Military Service)</h3>
-          <p class="text-sm text-gray-700 mb-2 dark:text-gray-400">Arab International Optical Company | May 2023 – May 2024, Cairo</p>
-          <ul class="list-disc ml-6 text-gray-700 dark:text-gray-400">
-            <li>Managed troubleshooting and maintenance for production lines</li>
-            <li>Oversaw product quality control and management</li>
-            <li>Provided technical support for LED, PV, and CCTV factories</li>
-            <li>Improved production efficiency and control systems</li>
-            <li>Handled customer technical support and relations</li>
-          </ul>
-        </div>
-      </div>
-      <!-- Dar Alkahrabaa -->
-      <div class="bg-white dark:bg-[#171c22] rounded-xl shadow-lg flex flex-col md:flex-row items-center p-6 gap-6 experience-card">
-        <div class="w-20 h-20 rounded-lg shadow-md overflow-hidden">
-          <img src="images/dar_al_kahrabaa.png" alt="Dar Al-Kahrabaa Logo" class="w-full h-full object-contain" />
-        </div>
-        <div>
-          <h3 class="font-bold text-xl mb-1">Engineering Trainee</h3>
-          <p class="text-sm text-gray-700 mb-2 dark:text-gray-400">Dar Alkahrbaa | Jun 2022 – Sep 2022, Cairo</p>
-          <ul class="list-disc ml-6 text-gray-700 dark:text-gray-400">
-            <li>Electrical design, shop drawings, tendering, project training</li>
-            <li>Lighting and power design for hospital infrastructure</li>
-            <li>Cable routing and HVAC system design</li>
-          </ul>
-        </div>
-      </div>
-      <!-- Cairo Roads -->
-      <div class="bg-white dark:bg-[#171c22] rounded-xl shadow-lg flex flex-col md:flex-row items-center p-6 gap-6 experience-card">
-        <div class="w-20 h-20 rounded-lg shadow-md overflow-hidden">
-          <img src="images/cairoroads.png" alt="Cairo Roads & Construction Company Logo" class="w-full h-full object-contain" />
-        </div>
-        <div>
-          <h3 class="font-bold text-xl mb-1">Assistant Engineer (Intern)</h3>
-          <p class="text-sm text-gray-700 mb-2 dark:text-gray-400">Cairo Roads and Construction Company | Jun 2018 – Sep 2018, Cairo</p>
-          <ul class="list-disc ml-6 text-gray-700 dark:text-gray-400">
-            <li>Supervised project at Water Club; site review and QA/QC</li>
-            <li>Assisted in electrical infrastructure planning</li>
-            <li>Participated in project coordination meetings</li>
-          </ul>
-        </div>
-      </div>
-      <!-- Al Othaim Supermarket -->
-      <div class="bg-white dark:bg-[#171c22] rounded-xl shadow-lg flex flex-col md:flex-row items-center p-6 gap-6 experience-card">
-        <div class="w-20 h-20 rounded-lg shadow-md overflow-hidden">
-          <img src="images/Abdullah Al Othaim.png" alt="Abdullah Al Othaim Supermarket Logo" class="w-full h-full object-contain" />
-        </div>
-        <div>
-          <h3 class="font-bold text-xl mb-1">Grocery Employee</h3>
-          <p class="text-sm text-gray-700 mb-2 dark:text-gray-400">Abdullah Al Othaim Supermarket | Jun 2018 – Sep 2018, Cairo</p>
-          <ul class="list-disc ml-6 text-gray-700 dark:text-gray-400">
-            <li>Worked during the summer vacation to gain early exposure to the labor market</li>
-            <li>Contributed to store operations, inventory organization, and customer service</li>
-            <li>Developed responsibility, teamwork, and time management skills in a retail environment</li>
-            <li>Gained practical understanding of workflow and customer interaction in a commercial setting</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Projects Section -->
-<section id="projects" class="py-16 bg-white dark:bg-[#171c22]">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Projects</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-      <!-- Graduation Project -->
-      <div class="bg-white dark:bg-[#171c22] p-8 rounded-xl shadow-lg portfolio-item">
-        <h3 class="text-2xl font-bold text-emerald-700 mb-4 dark:text-emerald-600 dark:text-emerald-400">Integrated Power Quality Assessment and PV Solution for Industrial Facilities</h3>
-        <!-- Project Images Gallery -->
-        <div class="flex flex-wrap justify-center gap-4 mb-6">
-          <img src="images/gp1.png" alt="Graduation Project 1" class="w-32 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
-          <img src="images/gp2.png" alt="Graduation Project 2" class="w-32 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
-          <img src="images/gp3.png" alt="Graduation Project 3" class="w-32 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
-        </div>
-        <p class="text-gray-700 mb-4 dark:text-gray-400">Danone Factory, Obour | Aug 2021 – Jun 2022</p>
-        <div class="mb-6">
-          <p class="mb-4">
-            This comprehensive project investigated power quality and the integration of photovoltaic (PV) solar energy systems in an industrial facility. The study aimed to enhance energy management and ensure stable power quality, both for on-grid and off-grid scenarios.
-          </p>
-        </div>
-        <div class="grid grid-cols-1 gap-6 mb-6">
-          <div>
-            <h4 class="font-bold text-lg mb-2">Key Achievements:</h4>
-            <ul class="list-disc ml-6">
-              <li>Analyzed load characteristics and power quality issues in actual factory environments</li>
-              <li>Simulated industrial loads and dynamic behaviors using MATLAB</li>
-              <li>Designed and simulated both on-grid and off-grid PV systems</li>
-              <li>Evaluated impact of solar irradiance and grid strength on system stability</li>
-              <li>Provided practical guidelines for PV integration in factories</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-bold text-lg mb-2">Key Conclusions:</h4>
-            <ul class="list-disc ml-6">
-              <li>Higher grid strength improves voltage and current quality</li>
-              <li>THD levels are related to solar irradiance and grid conditions</li>
-              <li>Effective PV integration requires consideration of grid strength and solar variability</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-bold text-lg mb-2">Technologies Used:</h4>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">MATLAB</span>
-              <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">PVSyst</span>
-              <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">Power Quality Analysis</span>
-              <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">Solar Energy</span>
-              <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">Industrial Load Simulation</span>
+          <div class="skill-group reveal">
+            <h3>Commercial</h3>
+            <div class="skill-list">
+              <span>Business Development</span>
+              <span>Market Research</span>
+              <span>Marketing Strategy</span>
+              <span>Competitive Intelligence</span>
+              <span>Go-to-Market Strategy</span>
+              <span>Product Positioning</span>
+              <span>Stakeholder Management</span>
+              <span>Business Communication</span>
             </div>
           </div>
-        </div>
-      </div>
-
-      <!-- Master Research Project -->
-      <div class="bg-white dark:bg-[#171c22] p-8 rounded-xl shadow-lg portfolio-item">
-        <h3 class="text-2xl font-bold text-emerald-700 mb-4 dark:text-emerald-600 dark:text-emerald-400">Real-Time Load Forecasting and Energy Management</h3>
-        <!-- Project Images Gallery -->
-        <div class="flex flex-wrap justify-center gap-4 mb-6">
-          <img src="images/Master.png" alt="Master Research" class="w-64 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
-        </div>
-        <p class="text-gray-700 mb-4 dark:text-gray-400">Ongoing MSc Research | 2024 – Present</p>
-        <div class="mb-6">
-          <p class="mb-4">
-            This research presents a comprehensive real-time energy management system for smart buildings and mixed-load infrastructures. The system leverages advanced forecasting techniques and reinforcement learning to dynamically allocate energy resources, reduce operational costs, and enhance reliability.
-          </p>
-        </div>
-        <div class="grid grid-cols-1 gap-6">
-          <div>
-            <h4 class="font-bold text-lg mb-2">Research Highlights:</h4>
-            <ul class="list-disc ml-6">
-              <li>Hybrid LSTM-XGBoost model for 15-minute load forecasting with 92% accuracy</li>
-              <li>Hierarchical Multi-Agent Reinforcement Learning (HMARL) framework</li>
-              <li>Dynamic resource allocation and cost reduction strategies</li>
-              <li>Creation of diverse load simulation framework for multiple sectors</li>
-              <li>Extensive evaluation across load types, weather conditions, and temporal dynamics</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-bold text-lg mb-2">Technologies Used:</h4>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">Python</span>
-              <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">TensorFlow</span>
-              <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">XGBoost</span>
-              <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">Reinforcement Learning</span>
-              <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">MATLAB</span>
-              <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">FastAPI</span>
+          <div class="skill-group reveal">
+            <h3>Digital</h3>
+            <div class="skill-list">
+              <span>Digital Solutions</span>
+              <span>AI &amp; Data Analytics</span>
+              <span>Digital Transformation</span>
+              <span>Data-driven Decision Making</span>
+              <span>Executive Presentations</span>
+              <span>Content &amp; Personal Branding</span>
             </div>
           </div>
-        </div>
-      </div>
-
-      <!-- PV/Solar Project -->
-      <div class="bg-white dark:bg-[#171c22] p-8 rounded-xl shadow-lg portfolio-item">
-        <h3 class="text-2xl font-bold text-emerald-700 mb-4 dark:text-emerald-600 dark:text-emerald-400">PV System Integration for TEC TRAFO</h3>
-        <!-- Project Images Gallery -->
-        <div class="flex flex-wrap justify-center gap-4 mb-6">
-          <img src="images/sp1.png" alt="Solar Project 1" class="w-32 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
-          <img src="images/sp2.png" alt="Solar Project 2" class="w-32 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
-          <img src="images/sp3.png" alt="Solar Project 3" class="w-32 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
-        </div>
-        <p class="text-gray-700 mb-4 dark:text-gray-400">2025 | Comprehensive Solar PV Solution</p>
-        <div class="mb-6">
-          <p class="mb-4">
-            In 2025, I spearheaded the comprehensive design and integration of a Photovoltaic (PV) system for TECTRAFO. This project involved a complete study, leveraging advanced tools for optimal energy solutions.
-          </p>
-        </div>
-        <div class="grid grid-cols-1 gap-6 mb-6">
-          <div>
-            <h4 class="font-bold text-lg mb-2">Key Features:</h4>
-            <ul class="list-disc ml-6">
-              <li>PVSyst for accurate energy yield simulations</li>
-              <li>SketchUp for detailed 3D modeling of PV array layout</li>
-              <li>AutoCAD for precise electrical schematics and panel placements</li>
-              <li>Google Maps for site assessment and optimization</li>
-              <li>Fully integrated solution enhancing energy sustainability</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-bold text-lg mb-2">Technologies Used:</h4>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">PVSyst</span>
-              <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">SketchUp</span>
-              <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">AutoCAD</span>
-              <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">Google Maps API</span>
-              <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">Solar Energy</span>
+          <div class="skill-group reveal">
+            <h3>Industry</h3>
+            <div class="skill-list">
+              <span>Energy</span>
+              <span>Renewable Energy</span>
+              <span>Smart Grid</span>
+              <span>Industrial Technology</span>
+              <span>Energy Management</span>
+              <span>Power Products</span>
             </div>
           </div>
-        </div>
-      </div>
-
-<!-- Transformer Design Software Project Card (PV Style) -->
-<div class="bg-white dark:bg-[#171c22] p-8 rounded-xl shadow-lg portfolio-item">
-  <!-- Title (matches PV Project) -->
-  <h3 class="text-2xl font-bold text-emerald-700 mb-4 dark:text-emerald-600 dark:text-emerald-400">
-    Transformer Design Software
-  </h3>
-  <!-- Image under title, left-aligned -->
-  <div class="flex flex-wrap justify-center gap-4 mb-6">
-    <img src="images/taicon.png" alt="Transformer Design Software Icon"
-         class="w-32 h-32 object-contain rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
-  </div>
-  <!-- Company and Dates -->
-  <p class="text-gray-700 mb-4 dark:text-gray-400">Jun 2024 – Present | TEC TRAFO, Giza</p>
-  <div class="mb-6">
-    <p class="mb-4">
-      Developed a custom software solution to automate transformer sizing and calculations for R&D purposes, significantly improving design accuracy and reducing process errors.
-    </p>
-  </div>
-  <div class="grid grid-cols-1 gap-6 mb-6">
-    <div>
-      <h4 class="font-bold text-lg mb-2">Key Features:</h4>
-      <ul class="list-disc ml-6">
-        <li>Automated transformer dimensioning and core visualization</li>
-        <li>Advanced loss calculation algorithms</li>
-        <li>Compliance with IEC and IEEE standards</li>
-        <li>User-friendly interface for design engineers</li>
-        <li>Reduced design errors by 45% and improved accuracy</li>
-        <li>Integration with existing design workflows</li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="font-bold text-lg mb-2">Technologies Used:</h4>
-      <div class="flex flex-wrap gap-2">
-        <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">Python</span>
-        <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">Tkinter</span>
-        <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">Excel Automation</span>
-        <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">Transformer Design</span>
-        <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">GUI Development</span>
-      </div>
-    </div>
-  </div>
-</div>
-      <!-- Robotic Car -->
-      <div class="bg-white dark:bg-[#171c22] p-8 rounded-xl shadow-lg portfolio-item">
-        <h3 class="text-2xl font-bold text-emerald-700 mb-4 dark:text-emerald-600 dark:text-emerald-400">Robotic Car</h3>
-        <!-- Project Images Gallery -->
-        <div class="flex flex-wrap justify-center gap-4 mb-6">
-          <img src="images/rc.png" alt="Robotic Car" class="w-40 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
-        </div>
-        <p class="text-gray-700 mb-4 dark:text-gray-400">2019 | Arduino-Based Robotics</p>
-        <div class="mb-6">
-          <p class="mb-4">
-            Designed and built a robotic car using Arduino for control, providing hands-on experience in robotics and embedded systems.
-          </p>
-        </div>
-        <div class="grid grid-cols-1 gap-6">
-          <div>
-            <h4 class="font-bold text-lg mb-2">Project Highlights:</h4>
-            <ul class="list-disc ml-6">
-              <li>Designed and built a fully functional robotic car</li>
-              <li>Implemented Arduino-based control system</li>
-              <li>Integrated sensors for obstacle detection and navigation</li>
-              <li>Hands-on experience in robotics and embedded systems</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-bold text-lg mb-2">Technologies Used:</h4>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">Arduino</span>
-              <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">C++</span>
-              <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">Robotics</span>
-              <span class="skill-badge bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100">Embedded Systems</span>
+          <div class="skill-group reveal">
+            <h3>Human</h3>
+            <div class="skill-list">
+              <span>Cross-functional Collaboration</span>
+              <span>Research Synthesis</span>
+              <span>Problem Solving</span>
+              <span>Storytelling</span>
+              <span>Customer Perspective</span>
+              <span>Continuous Learning</span>
             </div>
           </div>
+          <div class="technical-note reveal"><strong>Technical background:</strong> AutoCAD, ETAP, PSCAD, PVSyst, Revit, MATLAB, Python, transformer design, power systems, and engineering documentation remain part of the toolkit — applied when they strengthen business understanding and customer value.</div>
         </div>
       </div>
-      
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div class="reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s build <em>what’s next.</em></h2>
+          <p class="contact-copy">Open to commercial, business development, marketing, strategy, and digital business opportunities across Egypt and the Gulf region.</p>
+          <div class="contact-actions">
+            <a class="button button-light" href="mailto:muhammed_asaad@outlook.com">Start a conversation <span class="arrow">↗</span></a>
+            <a class="button button-light" href="mohamed asaad resume.pdf" download>Download CV</a>
+          </div>
+        </div>
+
+        <div class="contact-details reveal">
+          <a class="contact-link" href="mailto:muhammed_asaad@outlook.com"><span>muhammed_asaad@outlook.com</span><span>↗</span></a>
+          <a class="contact-link" href="tel:+201005678356"><span>+20 100 567 8356</span><span>↗</span></a>
+          <a class="contact-link" href="https://wa.me/971585378293" target="_blank" rel="noreferrer"><span>WhatsApp · Gulf</span><span>↗</span></a>
+          <a class="contact-link" href="https://www.linkedin.com/in/mohamed-asaad-38b710162/" target="_blank" rel="noreferrer"><span>LinkedIn</span><span>↗</span></a>
+          <a class="contact-link" href="https://github.com/MohamedAsaaad/Asaad" target="_blank" rel="noreferrer"><span>GitHub</span><span>↗</span></a>
+          <div class="contact-link"><span>Cairo, Egypt</span><span>EG</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© <span id="current-year">2026</span> Mohamed Asaad</span>
+      <span>Energy → Technology → Business</span>
     </div>
-  </div>
-</section>
+  </footer>
 
+  <script>
+    const header = document.getElementById('site-header');
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    const navAnchors = [...navLinks.querySelectorAll('a[href^="#"]')];
+    const sections = [...document.querySelectorAll('main section[id]')];
 
-<!-- Certificates Section -->
-<section id="certificates" class="py-16 bg-gray-100 dark:bg-[#23272f]">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Certificates & Training</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Certificate 1 -->
-      <div class="certificate-card bg-white dark:bg-[#171c22] p-6 rounded-xl">
-        <div class="w-full h-48 mb-4 overflow-hidden rounded-xl border-2 border-emerald-200">
-          <img src="images/renewable-energy-green-building-entrepreneurship.png" alt="Renewable Energy & Green Building Entrepreneurship Certificate" class="w-full h-full object-contain" />
-        </div>
-        <h3 class="text-xl font-bold mb-2">Renewable Energy & Green Building Entrepreneurship</h3>
-        <p class="text-gray-700 mb-2 dark:text-gray-400">Duke University | 2024</p>
-      </div>
-      <!-- Certificate 2 -->
-      <div class="certificate-card bg-white dark:bg-[#171c22] p-6 rounded-xl">
-        <div class="w-full h-48 mb-4 overflow-hidden rounded-xl border-2 border-emerald-200">
-          <img src="images/scientific-writing-for-msc-students.png" alt="Scientific Writing for MSc Students Certificate" class="w-full h-full object-contain" />
-        </div>
-        <h3 class="text-xl font-bold mb-2">Scientific Writing for MSc Students</h3>
-        <p class="text-gray-700 mb-2 dark:text-gray-400">Ain Shams University | 2024</p>
-      </div>
-      <!-- Certificate 3 -->
-      <div class="certificate-card bg-white dark:bg-[#171c22] p-6 rounded-xl">
-        <div class="w-full h-48 mb-4 overflow-hidden rounded-xl border-2 border-emerald-200">
-          <img src="images/employability-skills-training.png" alt="Employability Skills Training Certificate" class="w-full h-full object-contain" />
-        </div>
-        <h3 class="text-xl font-bold mb-2">Employability Skills Training</h3>
-        <p class="text-gray-700 mb-2 dark:text-gray-400">ASU Career Center | 2022</p>
-      </div>
-      <!-- Certificate 4 -->
-      <div class="certificate-card bg-white dark:bg-[#171c22] p-6 rounded-xl">
-        <div class="w-full h-48 mb-4 overflow-hidden rounded-xl border-2 border-emerald-200">
-          <img src="images/fundamentals-of-digital-marketing.png" alt="Fundamentals of Digital Marketing Certificate" class="w-full h-full object-contain" />
-        </div>
-        <h3 class="text-xl font-bold mb-2">Fundamentals of Digital Marketing</h3>
-        <p class="text-gray-700 mb-2 dark:text-gray-400">Google Digital Garage | 2023</p>
-      </div>
-      <!-- Certificate 5 -->
-      <div class="certificate-card bg-white dark:bg-[#171c22] p-6 rounded-xl">
-        <div class="w-full h-48 mb-4 overflow-hidden rounded-xl border-2 border-emerald-200">
-          <img src="images/electrical-design-diploma.png" alt="Electrical Design Diploma Certificate" class="w-full h-full object-contain" />
-        </div>
-        <h3 class="text-xl font-bold mb-2">Electrical Design Diploma</h3>
-        <p class="text-gray-700 mb-2 dark:text-gray-400">Dar Al-Kahrbaa Training Center | 2022</p>
-      </div>
-      <!-- Certificate 6 -->
-      <div class="certificate-card bg-white dark:bg-[#171c22] p-6 rounded-xl">
-        <div class="w-full h-48 mb-4 overflow-hidden rounded-xl border-2 border-emerald-200">
-          <img src="images/up-skill-second-edition-24.png" alt="UP SKILL SECOND EDITION'24 Certificate" class="w-full h-full object-contain" />
-        </div>
-        <h3 class="text-xl font-bold mb-2">UP SKILL SECOND EDITION'24</h3>
-        <p class="text-gray-700 mb-2 dark:text-gray-400">Ain Shams University | 2024</p>
-      </div>
-    </div>
-  </div>
-</section>
+    const closeMenu = () => {
+      menuToggle.classList.remove('open');
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open navigation');
+    };
 
-<!-- Volunteering Section -->
-<section id="volunteering" class="py-16 bg-white dark:bg-[#171c22]">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Volunteering</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="bg-gray-100 dark:bg-[#23272f] p-8 rounded-xl shadow-lg">
-        <div class="flex flex-col md:flex-row items-center gap-8">
-          <div class="w-24 h-24 rounded-full bg-emerald-100 flex items-center justify-center mb-4 md:mb-0">
-            <i class="fas fa-hands-helping text-3xl text-emerald-600"></i>
-          </div>
-          <div>
-            <h3 class="text-2xl font-bold text-emerald-700 mb-4 dark:text-emerald-600 dark:text-emerald-400">Basmat Hayat Association for Children</h3>
-            <p class="text-lg mb-4">
-              Attended events and supported child development initiatives in 2018.
-            </p>
-            <ul class="list-disc ml-6 text-gray-700 dark:text-gray-400">
-              <li>Assisted in organizing educational and recreational activities for children</li>
-              <li>Supported fundraising events to benefit the association's programs</li>
-              <li>Collaborated with other volunteers to create a supportive environment</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="bg-gray-100 dark:bg-[#23272f] p-8 rounded-xl shadow-lg">
-        <div class="flex flex-col md:flex-row items-center gap-8">
-          <div class="w-24 h-24 rounded-full bg-emerald-100 flex items-center justify-center mb-4 md:mb-0">
-            <i class="fas fa-users text-3xl text-emerald-600"></i>
-          </div>
-          <div>
-            <h3 class="text-2xl font-bold text-emerald-700 mb-4 dark:text-emerald-600 dark:text-emerald-400">Connected Family</h3>
-            <p class="text-lg mb-4">
-              Member & Vice Head, Marketing Committee (2019-2021)
-            </p>
-            <ul class="list-disc ml-6 text-gray-700 dark:text-gray-400">
-              <li>Conceptualized event ideas and managed social media</li>
-              <li>Crafted marketing content and promotional materials</li>
-              <li>Oversaw work completion and coordinated marketing efforts</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Conferences Section -->
-<section id="conferences" class="py-16 bg-gray-100 dark:bg-[#23272f]">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Conferences & Events</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- Conference 1 -->
-      <div class="bg-white dark:bg-[#171c22] p-6 rounded-xl shadow-lg conference-card relative border-l-4 border-yellow-400">
-        <div class="flex flex-col items-center mb-4">
-          <img src="images/middle-east-energy-logo-new.png" alt="Middle East Energy Logo" class="h-10 w-auto mb-2 mt-1 object-contain">
-        </div>
-        <div>
-          <h3 class="text-xl font-bold text-emerald-700 mb-1 dark:text-emerald-600 dark:text-emerald-400">Middle East Energy 2025</h3>
-          <p class="text-gray-700 dark:text-gray-400">9–12 April 2025 | Dubai</p>
-        </div>
-        <p class="text-gray-700 dark:text-gray-400 mt-2">
-          The leading energy event in the Middle East, showcasing the latest innovations in energy generation, transmission, distribution, and renewable energy solutions.
-        </p>
-      </div>
-      <!-- Conference 2 -->
-      <div class="bg-white dark:bg-[#171c22] p-6 rounded-xl shadow-lg conference-card relative border-l-4 border-yellow-400">
-        <div class="flex flex-col items-center mb-4">
-          <img src="images/solaregypt.png" alt="Solar & Storage Live Egypt Logo" class="h-10 w-auto mb-2 mt-1 object-contain">
-        </div>
-        <div>
-          <h3 class="text-xl font-bold text-emerald-700 mb-1 dark:text-emerald-600 dark:text-emerald-400">Solar & Storage Live Egypt</h3>
-          <p class="text-gray-700 dark:text-gray-400">29–30 April 2025 | Egypt</p>
-        </div>
-        <p class="text-gray-700 dark:text-gray-400 mt-2">
-          Egypt's premier solar and energy storage exhibition, bringing together industry leaders to showcase innovations and discuss the future of renewable energy.
-        </p>
-      </div>
-     <!-- Conference 3 -->
-<div class="bg-white dark:bg-[#171c22] p-6 rounded-xl shadow-lg conference-card relative border-l-4 border-yellow-400">
-  <div class="flex flex-col items-center mb-4">
-    <img src="images/egyptenergy.png" alt="Egypt Energy Logo" class="h-10 w-auto mb-2 mt-1 object-contain">
-  </div>
-  <div>
-    <h3 class="text-xl font-bold text-emerald-700 mb-1 dark:text-emerald-600 dark:text-emerald-400">Egypt Energy 2024 and FIREX Egypt 2024</h3>
-    <p class="text-gray-700 dark:text-gray-400">26–28 November 2024 | Egypt</p>
-  </div>
-  <p class="text-gray-700 dark:text-gray-400 mt-2">
-    The region's leading international trade fair for energy, lighting, fire safety, and security, featuring the latest technologies and industry solutions.
-  </p>
-</div>
-    </div>
-  </div>
-</section>
-
-<!-- Hobbies & Interests Section -->
-<section id="hobbies" class="py-16 bg-gray-100 dark:bg-[#23272e]">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title text-gray-900 dark:text-white">Hobbies & Interests</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-      
-      <!-- Football (Slider with 2 images) -->
-      <div class="bg-white dark:bg-[#1a202c] p-6 rounded-2xl shadow-lg text-center hover:scale-105 transition duration-300">
-        <div class="relative w-32 h-32 mx-auto mb-4 rounded-2xl overflow-hidden shadow-md border-2 border-emerald-500/30">
-          <img src="images/egyptian soccer.png" alt="Football 1" class="absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-1000 opacity-100" id="football-slide-1">
-          <img src="images/fb1.png" alt="Football 2" class="absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-1000 opacity-0" id="football-slide-2">
-        </div>
-        <h3 class="text-xl font-bold text-emerald-600 dark:text-emerald-400">Football (Play & Watch)</h3>
-      </div>
-
-      <!-- Bicycle Riding -->
-      <div class="bg-white dark:bg-[#1a202c] p-6 rounded-2xl shadow-lg text-center hover:scale-105 transition duration-300">
-        <img src="images/cyclist.png" alt="Bicycle Riding" class="w-32 h-32 mx-auto mb-4 object-cover rounded-2xl shadow-md border-2 border-emerald-500/30">
-        <h3 class="text-xl font-bold text-emerald-600 dark:text-emerald-400">Bicycle Riding</h3>
-      </div>
-
-      <!-- Reading & Writing -->
-      <div class="bg-white dark:bg-[#1a202c] p-6 rounded-2xl shadow-lg text-center hover:scale-105 transition duration-300">
-        <img src="images/reading.png" alt="Reading and Writing" class="w-32 h-32 mx-auto mb-4 object-cover rounded-2xl shadow-md border-2 border-emerald-500/30">
-        <h3 class="text-xl font-bold text-emerald-600 dark:text-emerald-400">Reading & Writing</h3>
-      </div>
-
-      <!-- Poster Making (Slider) -->
-      <div class="bg-white dark:bg-[#1a202c] p-6 rounded-2xl shadow-lg text-center hover:scale-105 transition duration-300">
-        <div class="relative w-32 h-32 mx-auto mb-4 rounded-2xl overflow-hidden shadow-md border-2 border-emerald-500/30">
-          <img src="images/poster1.png" alt="Poster 1" class="absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-1000 opacity-100" id="poster-slide-1">
-          <img src="images/poster2.png" alt="Poster 2" class="absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-1000 opacity-0" id="poster-slide-2">
-        </div>
-        <h3 class="text-xl font-bold text-emerald-600 dark:text-emerald-400">Poster Making</h3>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Hobbies Sliders Script (Place before </body> or after this section) -->
-<script>
-  // Football slider
-  let fbSlide = 1;
-  setInterval(() => {
-    const f1 = document.getElementById('football-slide-1');
-    const f2 = document.getElementById('football-slide-2');
-    if (fbSlide === 1) {
-      f1.style.opacity = '0';
-      f2.style.opacity = '1';
-      fbSlide = 2;
-    } else {
-      f1.style.opacity = '1';
-      f2.style.opacity = '0';
-      fbSlide = 1;
-    }
-  }, 2500);
-
-  // Poster slider
-  let posterSlide = 1;
-  setInterval(() => {
-    const p1 = document.getElementById('poster-slide-1');
-    const p2 = document.getElementById('poster-slide-2');
-    if (posterSlide === 1) {
-      p1.style.opacity = '0';
-      p2.style.opacity = '1';
-      posterSlide = 2;
-    } else {
-      p1.style.opacity = '1';
-      p2.style.opacity = '0';
-      posterSlide = 1;
-    }
-  }, 2500);
-</script>
-
-<!-- Contact Section -->
-<section id="contact" class="py-16 bg-white dark:bg-[#171c22]">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Get In Touch</h2>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-      <div>
-        <form action="https://formsubmit.co/muhammed_asaad@outlook.com" method="POST" class="space-y-6">
-          <input type="hidden" name="_subject" value="New message from Mohamed Asaad Portfolio!" />
-          <input type="hidden" name="_captcha" value="false" />
-          <div>
-            <label for="name" class="block text-lg font-medium mb-2">Name</label>
-            <input type="text" id="name" name="name" required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-white dark:bg-[#23272f] dark:text-gray-100"
-              placeholder="Your Name">
-          </div>
-          <div>
-            <label for="email" class="block text-lg font-medium mb-2">Email</label>
-            <input type="email" id="email" name="email" required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-white dark:bg-[#23272f] dark:text-gray-100"
-              placeholder="Your Email">
-          </div>
-          <div>
-            <label for="message" class="block text-lg font-medium mb-2">Message</label>
-            <textarea id="message" name="message" rows="5" required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-white dark:bg-[#23272f] dark:text-gray-100"
-              placeholder="Your Message"></textarea>
-          </div>
-          <button type="submit"
-            class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-lg shadow-lg transition transform hover:scale-[1.02]">
-            Send Message
-          </button>
-        </form>
-      </div>
-      <div>
-        <div class="bg-emerald-50 dark:bg-[#23302f] p-8 rounded-xl shadow-lg h-full">
-          <h3 class="text-2xl font-bold mb-6 text-emerald-700 dark:text-emerald-600 dark:text-emerald-400">Contact Information</h3>
-          <div class="space-y-6">
-            <div class="flex items-start">
-              <div class="contact-icon">
-                <i class="fas fa-envelope text-white text-2xl"></i>
-              </div>
-              <div class="ml-4">
-                <h4 class="font-bold text-lg">Email</h4>
-                <a href="mailto:muhammed_asaad@outlook.com" class="text-gray-700 hover:text-emerald-600 dark:text-gray-200">muhammed_asaad@outlook.com</a>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <div class="contact-icon">
-                <i class="fab fa-whatsapp text-white text-2xl"></i>
-              </div>
-              <div class="ml-4">
-                <h4 class="font-bold text-lg">WhatsApp (Egypt)</h4>
-                <a href="https://wa.me/201005678356" target="_blank" class="text-gray-700 hover:text-emerald-600 dark:text-gray-200">+20 100 567 8356</a>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <div class="contact-icon">
-                <i class="fab fa-whatsapp text-white text-2xl"></i>
-              </div>
-              <div class="ml-4">
-                <h4 class="font-bold text-lg">WhatsApp (UAE)</h4>
-                <a href="https://wa.me/971585378293" target="_blank" class="text-gray-700 hover:text-emerald-600 dark:text-gray-200">+971 58 537 8293</a>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <div class="contact-icon">
-                <i class="fas fa-phone text-white text-2xl"></i>
-              </div>
-              <div class="ml-4">
-                <h4 class="font-bold text-lg">Phone</h4>
-                <a href="tel:+201005678356" class="text-gray-700 hover:text-emerald-600 dark:text-gray-200">+20 100 567 8356</a>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <div class="contact-icon">
-                <i class="fas fa-map-marker-alt text-white text-2xl"></i>
-              </div>
-              <div class="ml-4">
-                <h4 class="font-bold text-lg">Location</h4>
-                <p class="text-gray-700 dark:text-gray-200">Cairo, Egypt</p>
-              </div>
-            </div>
-          </div>
-          <div class="mt-12">
-            <h4 class="font-bold text-lg mb-4">Connect with me</h4>
-            <div class="flex space-x-4">
-              <a href="https://www.linkedin.com/in/mohamed-asaad-38b710162/" target="_blank" class="social-hover">
-                <i class="fab fa-linkedin-in text-2xl text-emerald-600 hover:text-emerald-800 dark:text-emerald-600 dark:text-emerald-400"></i>
-              </a>
-              <a href="https://github.com/MohamedAsaaad/Asaad.git" target="_blank" class="social-hover">
-                <i class="fab fa-github text-2xl text-emerald-600 hover:text-emerald-800 dark:text-emerald-600 dark:text-emerald-400"></i>
-              </a>
-              <a href="https://www.youtube.com/@mohamedasaad8860" target="_blank" class="social-hover">
-                <i class="fab fa-youtube text-2xl text-emerald-600 hover:text-emerald-800 dark:text-emerald-600 dark:text-emerald-400"></i>
-              </a>
-  </a>
-  <!-- Instagram Icon -->
-  <a href="https://www.instagram.com/mohamed_asaad_22?igsh=MTB2Z2JycnhuYTM5Mg%3D%3D&utm_source=qr" target="_blank" class="social-hover">
-    <i class="fab fa-instagram text-2xl text-emerald-600 hover:text-emerald-800 dark:text-emerald-600 dark:text-emerald-400"></i>
-  </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-gray-800 text-white py-12">
-  <div class="container mx-auto px-4">
-    <div class="flex flex-col md:flex-row justify-between items-center">
-      <div class="mb-6 md:mb-0">
-        <a href="#" class="text-2xl font-bold text-white flex items-center">
-          <i class="fas fa-bolt mr-2 text-emerald-600 dark:text-emerald-400"></i> Mohamed Asaad
-        </a>
-        <p class="mt-2 text-gray-400">Electrical Engineer & Renewable Energy Specialist</p>
-      </div>
-      <div class="flex space-x-6">
-        <a href="https://www.linkedin.com/in/mohamed-asaad-38b710162/" target="_blank" class="text-gray-400 hover:text-white">
-          <i class="fab fa-linkedin-in text-xl"></i>
-        </a>
-        <a href="https://github.com/MohamedAsaaad/Asaad.git" target="_blank" class="text-gray-400 hover:text-white">
-          <i class="fab fa-github text-xl"></i>
-        </a>
-        <a href="https://www.youtube.com/@mohamedasaad8860" target="_blank" class="text-gray-400 hover:text-white">
-          <i class="fab fa-youtube text-xl"></i>
-        </a>
-        <a href="https://www.instagram.com/mohamed_asaad_22?igsh=MTB2Z2JycnhuYTM5Mg%3D%3D&utm_source=qr" target="_blank" class="text-gray-400 hover:text-white">
-          <i class="fab fa-instagram text-xl"></i>
-        </a>
-      </div>
-    </div>
-    <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-      <p>&copy; <span id="current-year"></span> Mohamed Asaad. All rights reserved.</p>
-      <p class="mt-2">Designed and developed by Mohamed Asaad</p>
-    </div>
-  </div>
-</footer>
-
-<!-- JavaScript for UI Interactivity & Dark Mode -->
-<script>
-  // Mobile menu toggle
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('active');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.classList.toggle('open', isOpen);
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
     });
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => mobileMenu.classList.remove('active'));
+
+    navAnchors.forEach((link) => link.addEventListener('click', closeMenu));
+
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 18);
+    }, { passive: true });
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px' });
+
+    document.querySelectorAll('.reveal').forEach((element, index) => {
+      element.style.transitionDelay = `${Math.min(index % 4, 3) * 70}ms`;
+      revealObserver.observe(element);
     });
-  }
 
-  // Set current year in footer
-  document.getElementById('current-year').textContent = new Date().getFullYear();
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navAnchors.forEach((link) => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+        });
+      });
+    }, { rootMargin: '-35% 0px -58% 0px', threshold: 0 });
 
-  // Active navigation link on scroll
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('.nav-link, #mobile-menu a');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(sec => {
-      const top = sec.offsetTop;
-      if (pageYOffset >= top - 100) current = sec.getAttribute('id');
-    });
-    navLinks.forEach(link => {
-      link.classList.remove('text-emerald-600','font-bold');
-      if (link.getAttribute('href').substring(1) === current) {
-        link.classList.add('text-emerald-600','font-bold');
-      }
-    });
-  });
-
-  // Dark Mode Functionality
-  const body = document.getElementById('body');
-  const themeToggle = document.getElementById('theme-toggle');
-  const themeIcon = document.getElementById('theme-icon');
-
-  // Load user preference
-  if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark');
-    themeIcon.classList.remove('fa-moon');
-    themeIcon.classList.add('fa-sun');
-  }
-
-  function toggleDarkMode() {
-    body.classList.toggle('dark');
-    const isDark = body.classList.contains('dark');
-    themeIcon.classList.toggle('fa-moon', !isDark);
-    themeIcon.classList.toggle('fa-sun', isDark);
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  }
-</script>
-
+    sections.forEach((section) => sectionObserver.observe(section));
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
