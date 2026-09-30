@@ -139,6 +139,27 @@
     .dark #theme-toggle { background: #23272f; }
     #poster-slide-1, #poster-slide-2 { transition: opacity 1s; }
   </style>
+<meta name="theme-color" content="#064e3b">
+<style>
+:root{--ink:#0f1f1b;--deep:#064e3b;--mid:#047857;--spark:#f5b83d}
+body{font-family:'Manrope','Poppins',system-ui,sans-serif;letter-spacing:-.005em}
+h1,h2,h3{letter-spacing:-.02em}
+section{scroll-margin-top:76px}
+.hero-gradient{background-color:var(--deep);background-image:radial-gradient(1200px 500px at 85% -10%,rgba(245,184,61,.22),transparent 60%),linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(135deg,#022c22,#047857);background-size:auto,44px 44px,44px 44px,auto}
+.hero-gradient .absolute.rounded-full{display:none}
+.hero-gradient .grid>div{border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(4px)}
+.hero-gradient .grid>div>div:first-child{color:var(--spark)}
+.experience-card,.education-card,.portfolio-item,.certificate-card,.research-card{border:1px solid rgba(6,78,59,.10);border-radius:18px!important;box-shadow:0 1px 2px rgba(6,40,30,.06),0 8px 24px -12px rgba(6,40,30,.18)!important}
+.experience-card:hover,.education-card:hover,.portfolio-item:hover,.certificate-card:hover{transform:translateY(-3px)!important;box-shadow:0 2px 4px rgba(6,40,30,.08),0 16px 32px -14px rgba(6,40,30,.28)!important}
+.dark .experience-card,.dark .education-card,.dark .portfolio-item,.dark .certificate-card{border-color:rgba(255,255,255,.08)}
+.experience-card ul li,.portfolio-item ul li{margin-bottom:.35rem;line-height:1.55}
+.md\:w-2\/3 p{max-width:68ch;line-height:1.75}
+.certificate-card img{background:#fff}
+.skill-badge{border-radius:999px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--spark);outline-offset:3px;border-radius:8px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body id="body" class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
@@ -243,7 +264,7 @@
         <a href="#contact" class="bg-white text-emerald-700 hover:bg-gray-100 px-6 py-3 rounded-full font-semibold shadow-lg transition transform hover:scale-105">
           <i class="fas fa-envelope mr-2"></i>Contact Me
         </a>
-       <a href="mohamed%20asaad%20resume.pdf" download class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-emerald-700 px-6 py-3 rounded-full font-semibold shadow-lg transition transform hover:scale-105">
+       <a href="Mohamed_Asaad_CV.pdf" download class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-emerald-700 px-6 py-3 rounded-full font-semibold shadow-lg transition transform hover:scale-105">
 <i class="fas fa-download mr-2"></i>Download Resume
 </a>
       </div>
@@ -293,7 +314,7 @@
         <div class="w-64 h-64 rounded-xl logo-placeholder flex items-center justify-center">
           <div class="text-center p-4">
             <div class="w-24 h-24 mx-auto mb-4">
-              <img src="images/mylogo.png" alt="Mohamed Asaad Logo" class="w-full h-full object-contain rounded-full" />
+              <img loading="lazy" decoding="async" src="images/mylogo.png" alt="Mohamed Asaad Logo" class="w-full h-full object-contain rounded-full" />
             </div>
             <h3 class="text-xl font-bold text-white">Mohamed Asaad</h3>
           </div>
@@ -326,7 +347,7 @@
       <div class="bg-white dark:bg-[#171c22] p-8 rounded-xl shadow-lg education-card">
         <div class="flex items-start">
           <div class="w-16 h-16 rounded-full overflow-hidden bg-white mr-6">
-            <img src="images/engasu.png" alt="Faculty of Engineering Logo" class="w-full h-full object-contain" />
+            <img loading="lazy" decoding="async" src="images/engasu.png" alt="Faculty of Engineering Logo" class="w-full h-full object-contain" />
           </div>
           <div>
             <h3 class="text-2xl font-bold text-emerald-700 mb-2 dark:text-emerald-600 dark:text-emerald-400">Master of Science in Electrical Power & Machines Engineering</h3>
@@ -350,7 +371,7 @@
       <!-- AUC Business Acumen -->
       <div class="bg-white dark:bg-[#171c22] p-8 rounded-xl shadow-lg education-card">
         <div class="flex items-start">
-          <div class="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mr-6 shrink-0">
+          <div data-img="images/auc-logo.png" class="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mr-6 shrink-0 overflow-hidden">
             <i class="fas fa-chart-line text-2xl text-emerald-600"></i>
           </div>
           <div>
@@ -370,7 +391,7 @@
       <div class="bg-white dark:bg-[#171c22] p-8 rounded-xl shadow-lg education-card">
         <div class="flex items-start">
           <div class="w-16 h-16 rounded-full overflow-hidden bg-white mr-6">
-            <img src="images/engasu.png" alt="Faculty of Engineering Logo" class="w-full h-full object-contain" />
+            <img loading="lazy" decoding="async" src="images/engasu.png" alt="Faculty of Engineering Logo" class="w-full h-full object-contain" />
           </div>
           <div>
             <h3 class="text-2xl font-bold text-emerald-700 mb-2 dark:text-emerald-600 dark:text-emerald-400">Bachelor of Science in Electrical Power & Machines Engineering</h3>
@@ -475,7 +496,7 @@
     <div class="space-y-10">
       <!-- Hitachi Energy -->
       <div class="bg-white dark:bg-[#171c22] rounded-xl shadow-lg flex flex-col md:flex-row items-center p-6 gap-6 experience-card">
-        <div class="w-20 h-20 rounded-lg shadow-md overflow-hidden bg-emerald-100 flex items-center justify-center shrink-0">
+        <div data-img="images/hitachi-energy.png" class="w-20 h-20 rounded-lg shadow-md overflow-hidden bg-emerald-100 flex items-center justify-center shrink-0">
           <i class="fas fa-industry text-3xl text-emerald-600"></i>
         </div>
         <div>
@@ -493,7 +514,7 @@
       <!-- TEC TRAFO - R&D -->
       <div class="bg-white dark:bg-[#171c22] rounded-xl shadow-lg flex flex-col md:flex-row items-center p-6 gap-6 experience-card">
         <div class="w-20 h-20 rounded-lg shadow-md overflow-hidden">
-          <img src="images/tectrafo.png" alt="TEC TRAFO Logo" class="w-full h-full object-contain" />
+          <img loading="lazy" decoding="async" src="images/tectrafo.png" alt="TEC TRAFO Logo" class="w-full h-full object-contain" />
         </div>
         <div>
           <h3 class="font-bold text-xl mb-1">Research & Development Engineer</h3>
@@ -511,7 +532,7 @@
       <!-- TEC TRAFO - Design -->
       <div class="bg-white dark:bg-[#171c22] rounded-xl shadow-lg flex flex-col md:flex-row items-center p-6 gap-6 experience-card">
         <div class="w-20 h-20 rounded-lg shadow-md overflow-hidden">
-          <img src="images/tectrafo.png" alt="TEC TRAFO Logo" class="w-full h-full object-contain" />
+          <img loading="lazy" decoding="async" src="images/tectrafo.png" alt="TEC TRAFO Logo" class="w-full h-full object-contain" />
         </div>
         <div>
           <h3 class="font-bold text-xl mb-1">Electrical Design Engineer</h3>
@@ -530,7 +551,7 @@
       <!-- iSON Xperiences -->
       <div class="bg-white dark:bg-[#171c22] rounded-xl shadow-lg flex flex-col md:flex-row items-center p-6 gap-6 experience-card">
         <div class="w-20 h-20 rounded-lg shadow-md overflow-hidden">
-          <img src="images/ison.png" alt="iSON Xperiences Logo" class="w-full h-full object-contain" />
+          <img loading="lazy" decoding="async" src="images/ison.png" alt="iSON Xperiences Logo" class="w-full h-full object-contain" />
         </div>
         <div>
           <h3 class="font-bold text-xl mb-1">Electrical Engineer (Facility & Maintenance)</h3>
@@ -557,7 +578,7 @@
       <!-- Arab International Optical -->
       <div class="bg-white dark:bg-[#171c22] rounded-xl shadow-lg flex flex-col md:flex-row items-center p-6 gap-6 experience-card">
         <div class="w-20 h-20 rounded-lg shadow-md overflow-hidden">
-          <img src="images/arab_international_optical_company.png" alt="Arab International Optronics Logo" class="w-full h-full object-contain" />
+          <img loading="lazy" decoding="async" src="images/arab_international_optical_company.png" alt="Arab International Optronics Logo" class="w-full h-full object-contain" />
         </div>
         <div>
           <h3 class="font-bold text-xl mb-1">Production Electrical Engineer (Military Service)</h3>
@@ -575,7 +596,7 @@
       <!-- Dar Alkahrabaa -->
       <div class="bg-white dark:bg-[#171c22] rounded-xl shadow-lg flex flex-col md:flex-row items-center p-6 gap-6 experience-card">
         <div class="w-20 h-20 rounded-lg shadow-md overflow-hidden">
-          <img src="images/dar_al_kahrabaa.png" alt="Dar Al-Kahrabaa Logo" class="w-full h-full object-contain" />
+          <img loading="lazy" decoding="async" src="images/dar_al_kahrabaa.png" alt="Dar Al-Kahrabaa Logo" class="w-full h-full object-contain" />
         </div>
         <div>
           <h3 class="font-bold text-xl mb-1">Engineering Trainee</h3>
@@ -590,7 +611,7 @@
       <!-- Cairo Roads -->
       <div class="bg-white dark:bg-[#171c22] rounded-xl shadow-lg flex flex-col md:flex-row items-center p-6 gap-6 experience-card">
         <div class="w-20 h-20 rounded-lg shadow-md overflow-hidden">
-          <img src="images/cairoroads.png" alt="Cairo Roads & Construction Company Logo" class="w-full h-full object-contain" />
+          <img loading="lazy" decoding="async" src="images/cairoroads.png" alt="Cairo Roads & Construction Company Logo" class="w-full h-full object-contain" />
         </div>
         <div>
           <h3 class="font-bold text-xl mb-1">Assistant Engineer (Intern)</h3>
@@ -605,7 +626,7 @@
       <!-- Al Othaim Supermarket -->
       <div class="bg-white dark:bg-[#171c22] rounded-xl shadow-lg flex flex-col md:flex-row items-center p-6 gap-6 experience-card">
         <div class="w-20 h-20 rounded-lg shadow-md overflow-hidden">
-          <img src="images/abdullah%20al%20othaim.png" alt="Abdullah Al Othaim Supermarket Logo" class="w-full h-full object-contain" />
+          <img loading="lazy" decoding="async" src="images/abdullah%20al%20othaim.png" alt="Abdullah Al Othaim Supermarket Logo" class="w-full h-full object-contain" />
         </div>
         <div>
           <h3 class="font-bold text-xl mb-1">Grocery Employee</h3>
@@ -667,9 +688,9 @@
         <h3 class="text-2xl font-bold text-emerald-700 mb-4 dark:text-emerald-600 dark:text-emerald-400">Integrated Power Quality Assessment and PV Solution for Industrial Facilities</h3>
         <!-- Project Images Gallery -->
         <div class="flex flex-wrap justify-center gap-4 mb-6">
-          <img src="images/gp1.png" alt="Graduation Project 1" class="w-32 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
-          <img src="images/gp2.png" alt="Graduation Project 2" class="w-32 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
-          <img src="images/gp3.png" alt="Graduation Project 3" class="w-32 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
+          <img loading="lazy" decoding="async" src="images/gp1.png" alt="Graduation Project 1" class="w-32 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
+          <img loading="lazy" decoding="async" src="images/gp2.png" alt="Graduation Project 2" class="w-32 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
+          <img loading="lazy" decoding="async" src="images/gp3.png" alt="Graduation Project 3" class="w-32 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
         </div>
         <p class="text-gray-700 mb-4 dark:text-gray-400">Danone Factory, Obour | Aug 2021 – Jun 2022</p>
         <div class="mb-6">
@@ -714,7 +735,7 @@
         <h3 class="text-2xl font-bold text-emerald-700 mb-4 dark:text-emerald-600 dark:text-emerald-400">Real-Time Load Forecasting and Energy Management</h3>
         <!-- Project Images Gallery -->
         <div class="flex flex-wrap justify-center gap-4 mb-6">
-          <img src="images/master.png" alt="Master Research" class="w-64 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
+          <img loading="lazy" decoding="async" src="images/master.png" alt="Master Research" class="w-64 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
         </div>
         <p class="text-gray-700 mb-4 dark:text-gray-400">Ongoing MSc Research | 2024 &ndash; Present | Published as an IEEE conference paper</p>
         <div class="mb-6">
@@ -752,9 +773,9 @@
         <h3 class="text-2xl font-bold text-emerald-700 mb-4 dark:text-emerald-600 dark:text-emerald-400">PV System Integration for TEC TRAFO</h3>
         <!-- Project Images Gallery -->
         <div class="flex flex-wrap justify-center gap-4 mb-6">
-          <img src="images/sp1.png" alt="Solar Project 1" class="w-32 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
-          <img src="images/sp2.png" alt="Solar Project 2" class="w-32 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
-          <img src="images/sp3.png" alt="Solar Project 3" class="w-32 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
+          <img loading="lazy" decoding="async" src="images/sp1.png" alt="Solar Project 1" class="w-32 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
+          <img loading="lazy" decoding="async" src="images/sp2.png" alt="Solar Project 2" class="w-32 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
+          <img loading="lazy" decoding="async" src="images/sp3.png" alt="Solar Project 3" class="w-32 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
         </div>
         <p class="text-gray-700 mb-4 dark:text-gray-400">2025 | Comprehensive Solar PV Solution</p>
         <div class="mb-6">
@@ -794,7 +815,7 @@
   </h3>
   <!-- Image under title, left-aligned -->
   <div class="flex flex-wrap justify-center gap-4 mb-6">
-    <img src="images/taicon.png" alt="Transformer Design Software Icon"
+    <img loading="lazy" decoding="async" src="images/taicon.png" alt="Transformer Design Software Icon"
          class="w-32 h-32 object-contain rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
   </div>
   <!-- Company and Dates -->
@@ -833,7 +854,7 @@
         <h3 class="text-2xl font-bold text-emerald-700 mb-4 dark:text-emerald-600 dark:text-emerald-400">Robotic Car</h3>
         <!-- Project Images Gallery -->
         <div class="flex flex-wrap justify-center gap-4 mb-6">
-          <img src="images/rc.png" alt="Robotic Car" class="w-40 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
+          <img loading="lazy" decoding="async" src="images/rc.png" alt="Robotic Car" class="w-40 h-32 object-cover rounded-xl shadow border border-emerald-200 dark:border-emerald-700">
         </div>
         <p class="text-gray-700 mb-4 dark:text-gray-400">2019 | Arduino-Based Robotics</p>
         <div class="mb-6">
@@ -876,7 +897,7 @@
       <!-- Certificate 1 -->
       <div class="certificate-card bg-white dark:bg-[#171c22] p-6 rounded-xl">
         <div class="w-full h-48 mb-4 overflow-hidden rounded-xl border-2 border-emerald-200">
-          <img src="images/renewable-energy-green-building-entrepreneurship.png" alt="Renewable Energy & Green Building Entrepreneurship Certificate" class="w-full h-full object-contain" />
+          <img loading="lazy" decoding="async" src="images/renewable-energy-green-building-entrepreneurship.png" alt="Renewable Energy & Green Building Entrepreneurship Certificate" class="w-full h-full object-contain" />
         </div>
         <h3 class="text-xl font-bold mb-2">Renewable Energy & Green Building Entrepreneurship</h3>
         <p class="text-gray-700 mb-2 dark:text-gray-400">Duke University | 2024</p>
@@ -884,7 +905,7 @@
       <!-- Certificate 2 -->
       <div class="certificate-card bg-white dark:bg-[#171c22] p-6 rounded-xl">
         <div class="w-full h-48 mb-4 overflow-hidden rounded-xl border-2 border-emerald-200">
-          <img src="images/scientific-writing-for-msc-students.png" alt="Scientific Writing for MSc Students Certificate" class="w-full h-full object-contain" />
+          <img loading="lazy" decoding="async" src="images/scientific-writing-for-msc-students.png" alt="Scientific Writing for MSc Students Certificate" class="w-full h-full object-contain" />
         </div>
         <h3 class="text-xl font-bold mb-2">Scientific Writing for MSc Students</h3>
         <p class="text-gray-700 mb-2 dark:text-gray-400">Ain Shams University | 2024</p>
@@ -892,7 +913,7 @@
       <!-- Certificate 3 -->
       <div class="certificate-card bg-white dark:bg-[#171c22] p-6 rounded-xl">
         <div class="w-full h-48 mb-4 overflow-hidden rounded-xl border-2 border-emerald-200">
-          <img src="images/employability-skills-training.png" alt="Employability Skills Training Certificate" class="w-full h-full object-contain" />
+          <img loading="lazy" decoding="async" src="images/employability-skills-training.png" alt="Employability Skills Training Certificate" class="w-full h-full object-contain" />
         </div>
         <h3 class="text-xl font-bold mb-2">Employability Skills Training</h3>
         <p class="text-gray-700 mb-2 dark:text-gray-400">ASU Career Center | 2022</p>
@@ -900,7 +921,7 @@
       <!-- Certificate 4 -->
       <div class="certificate-card bg-white dark:bg-[#171c22] p-6 rounded-xl">
         <div class="w-full h-48 mb-4 overflow-hidden rounded-xl border-2 border-emerald-200">
-          <img src="images/fundamentals-of-digital-marketing.png" alt="Fundamentals of Digital Marketing Certificate" class="w-full h-full object-contain" />
+          <img loading="lazy" decoding="async" src="images/fundamentals-of-digital-marketing.png" alt="Fundamentals of Digital Marketing Certificate" class="w-full h-full object-contain" />
         </div>
         <h3 class="text-xl font-bold mb-2">Fundamentals of Digital Marketing</h3>
         <p class="text-gray-700 mb-2 dark:text-gray-400">Google Digital Garage | 2023</p>
@@ -908,7 +929,7 @@
       <!-- Certificate 5 -->
       <div class="certificate-card bg-white dark:bg-[#171c22] p-6 rounded-xl">
         <div class="w-full h-48 mb-4 overflow-hidden rounded-xl border-2 border-emerald-200">
-          <img src="images/electrical-design-diploma.png" alt="Electrical Design Diploma Certificate" class="w-full h-full object-contain" />
+          <img loading="lazy" decoding="async" src="images/electrical-design-diploma.png" alt="Electrical Design Diploma Certificate" class="w-full h-full object-contain" />
         </div>
         <h3 class="text-xl font-bold mb-2">Electrical Design Diploma</h3>
         <p class="text-gray-700 mb-2 dark:text-gray-400">Dar Al-Kahrbaa Training Center | 2022</p>
@@ -916,30 +937,30 @@
       <!-- Certificate 6 -->
       <div class="certificate-card bg-white dark:bg-[#171c22] p-6 rounded-xl">
         <div class="w-full h-48 mb-4 overflow-hidden rounded-xl border-2 border-emerald-200">
-          <img src="images/up-skill-second-edition-24.png" alt="UP SKILL SECOND EDITION'24 Certificate" class="w-full h-full object-contain" />
+          <img loading="lazy" decoding="async" src="images/up-skill-second-edition-24.png" alt="UP SKILL SECOND EDITION'24 Certificate" class="w-full h-full object-contain" />
         </div>
         <h3 class="text-xl font-bold mb-2">UP SKILL SECOND EDITION'24</h3>
         <p class="text-gray-700 mb-2 dark:text-gray-400">Ain Shams University | 2024</p>
       </div>
       <!-- Additional certificates -->
       <div class="certificate-card bg-white dark:bg-[#171c22] p-6 rounded-xl">
-        <div class="w-full h-48 mb-4 rounded-xl border-2 border-emerald-200 bg-emerald-50 dark:bg-[#23302f] flex items-center justify-center"><i class="fas fa-briefcase text-6xl text-emerald-600"></i></div>
+        <div data-img="images/auc-business-acumen.png" class="w-full h-48 mb-4 rounded-xl border-2 border-emerald-200 bg-emerald-50 dark:bg-[#23302f] flex items-center justify-center"><i class="fas fa-briefcase text-6xl text-emerald-600"></i></div>
         <h3 class="text-xl font-bold mb-2">Business Acumen Program (in progress)</h3>
         <p class="text-gray-700 mb-2 dark:text-gray-400">Onsi Sawiris School of Business, AUC Executive Education</p>
       </div>
       <div class="certificate-card bg-white dark:bg-[#171c22] p-6 rounded-xl">
-        <a href="images/telp.png" target="_blank" rel="noopener" class="block w-full h-48 mb-4 overflow-hidden rounded-xl border-2 border-emerald-200"><img src="images/telp.png" alt="TELP English Proficiency Certificate" class="w-full h-full object-contain" /></a>
+        <a href="images/telp.png" target="_blank" rel="noopener" class="block w-full h-48 mb-4 overflow-hidden rounded-xl border-2 border-emerald-200"><img loading="lazy" decoding="async" src="images/telp.png" alt="TELP English Proficiency Certificate" class="w-full h-full object-contain" /></a>
         <h3 class="text-xl font-bold mb-2">Test of English Language Proficiency (TELP)</h3>
         <p class="text-gray-700 mb-2 dark:text-gray-400">Ain Shams University | Feb 2024 | Score 550 (equivalent to TOEFL)</p>
         <a href="images/telp.png" download="TELP-certificate.png" class="text-emerald-600 hover:text-emerald-800 font-semibold"><i class="fas fa-download mr-1"></i>Download certificate</a>
       </div>
       <div class="certificate-card bg-white dark:bg-[#171c22] p-6 rounded-xl">
-        <div class="w-full h-48 mb-4 rounded-xl border-2 border-emerald-200 bg-emerald-50 dark:bg-[#23302f] flex items-center justify-center"><i class="fas fa-laptop text-6xl text-emerald-600"></i></div>
+        <div data-img="images/accenture-digital-skills.png" class="w-full h-48 mb-4 rounded-xl border-2 border-emerald-200 bg-emerald-50 dark:bg-[#23302f] flex items-center justify-center"><i class="fas fa-laptop text-6xl text-emerald-600"></i></div>
         <h3 class="text-xl font-bold mb-2">Digital Skills for Work and Life</h3>
         <p class="text-gray-700 mb-2 dark:text-gray-400">Accenture</p>
       </div>
       <div class="certificate-card bg-white dark:bg-[#171c22] p-6 rounded-xl">
-        <div class="w-full h-48 mb-4 rounded-xl border-2 border-emerald-200 bg-emerald-50 dark:bg-[#23302f] flex items-center justify-center"><i class="fas fa-bolt text-6xl text-emerald-600"></i></div>
+        <div data-img="images/schneider-demand-response.png" class="w-full h-48 mb-4 rounded-xl border-2 border-emerald-200 bg-emerald-50 dark:bg-[#23302f] flex items-center justify-center"><i class="fas fa-bolt text-6xl text-emerald-600"></i></div>
         <h3 class="text-xl font-bold mb-2">Demand Response and the Smart Grid</h3>
         <p class="text-gray-700 mb-2 dark:text-gray-400">Schneider Electric University</p>
       </div>
@@ -1000,7 +1021,7 @@
       <!-- Conference 1 -->
       <div class="bg-white dark:bg-[#171c22] p-6 rounded-xl shadow-lg conference-card relative border-l-4 border-yellow-400">
         <div class="flex flex-col items-center mb-4">
-          <img src="images/middle-east-energy-logo-new.png" alt="Middle East Energy Logo" class="h-10 w-auto mb-2 mt-1 object-contain">
+          <img loading="lazy" decoding="async" src="images/middle-east-energy-logo-new.png" alt="Middle East Energy Logo" class="h-10 w-auto mb-2 mt-1 object-contain">
         </div>
         <div>
           <h3 class="text-xl font-bold text-emerald-700 mb-1 dark:text-emerald-600 dark:text-emerald-400">Middle East Energy 2025</h3>
@@ -1013,7 +1034,7 @@
       <!-- Conference 2 -->
       <div class="bg-white dark:bg-[#171c22] p-6 rounded-xl shadow-lg conference-card relative border-l-4 border-yellow-400">
         <div class="flex flex-col items-center mb-4">
-          <img src="images/solaregypt.png" alt="Solar & Storage Live Egypt Logo" class="h-10 w-auto mb-2 mt-1 object-contain">
+          <img loading="lazy" decoding="async" src="images/solaregypt.png" alt="Solar & Storage Live Egypt Logo" class="h-10 w-auto mb-2 mt-1 object-contain">
         </div>
         <div>
           <h3 class="text-xl font-bold text-emerald-700 mb-1 dark:text-emerald-600 dark:text-emerald-400">Solar & Storage Live Egypt</h3>
@@ -1026,7 +1047,7 @@
      <!-- Conference 3 -->
 <div class="bg-white dark:bg-[#171c22] p-6 rounded-xl shadow-lg conference-card relative border-l-4 border-yellow-400">
   <div class="flex flex-col items-center mb-4">
-    <img src="images/egyptenergy.png" alt="Egypt Energy Logo" class="h-10 w-auto mb-2 mt-1 object-contain">
+    <img loading="lazy" decoding="async" src="images/egyptenergy.png" alt="Egypt Energy Logo" class="h-10 w-auto mb-2 mt-1 object-contain">
   </div>
   <div>
     <h3 class="text-xl font-bold text-emerald-700 mb-1 dark:text-emerald-600 dark:text-emerald-400">Egypt Energy 2024 and FIREX Egypt 2024</h3>
@@ -1049,29 +1070,29 @@
       <!-- Football (Slider with 2 images) -->
       <div class="bg-white dark:bg-[#1a202c] p-6 rounded-2xl shadow-lg text-center hover:scale-105 transition duration-300">
         <div class="relative w-32 h-32 mx-auto mb-4 rounded-2xl overflow-hidden shadow-md border-2 border-emerald-500/30">
-          <img src="images/egyptian%20soccer.png" alt="Football 1" class="absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-1000 opacity-100" id="football-slide-1">
-          <img src="images/fb1.png" alt="Football 2" class="absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-1000 opacity-0" id="football-slide-2">
+          <img loading="lazy" decoding="async" src="images/egyptian%20soccer.png" alt="Football 1" class="absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-1000 opacity-100" id="football-slide-1">
+          <img loading="lazy" decoding="async" src="images/fb1.png" alt="Football 2" class="absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-1000 opacity-0" id="football-slide-2">
         </div>
         <h3 class="text-xl font-bold text-emerald-600 dark:text-emerald-400">Football (Play & Watch)</h3>
       </div>
 
       <!-- Bicycle Riding -->
       <div class="bg-white dark:bg-[#1a202c] p-6 rounded-2xl shadow-lg text-center hover:scale-105 transition duration-300">
-        <img src="images/cyclist.png" alt="Bicycle Riding" class="w-32 h-32 mx-auto mb-4 object-cover rounded-2xl shadow-md border-2 border-emerald-500/30">
+        <img loading="lazy" decoding="async" src="images/cyclist.png" alt="Bicycle Riding" class="w-32 h-32 mx-auto mb-4 object-cover rounded-2xl shadow-md border-2 border-emerald-500/30">
         <h3 class="text-xl font-bold text-emerald-600 dark:text-emerald-400">Bicycle Riding</h3>
       </div>
 
       <!-- Reading & Writing -->
       <div class="bg-white dark:bg-[#1a202c] p-6 rounded-2xl shadow-lg text-center hover:scale-105 transition duration-300">
-        <img src="images/reading.png" alt="Reading and Writing" class="w-32 h-32 mx-auto mb-4 object-cover rounded-2xl shadow-md border-2 border-emerald-500/30">
+        <img loading="lazy" decoding="async" src="images/reading.png" alt="Reading and Writing" class="w-32 h-32 mx-auto mb-4 object-cover rounded-2xl shadow-md border-2 border-emerald-500/30">
         <h3 class="text-xl font-bold text-emerald-600 dark:text-emerald-400">Reading & Writing</h3>
       </div>
 
       <!-- Poster Making (Slider) -->
       <div class="bg-white dark:bg-[#1a202c] p-6 rounded-2xl shadow-lg text-center hover:scale-105 transition duration-300">
         <div class="relative w-32 h-32 mx-auto mb-4 rounded-2xl overflow-hidden shadow-md border-2 border-emerald-500/30">
-          <img src="images/poster1.png" alt="Poster 1" class="absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-1000 opacity-100" id="poster-slide-1">
-          <img src="images/poster2.png" alt="Poster 2" class="absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-1000 opacity-0" id="poster-slide-2">
+          <img loading="lazy" decoding="async" src="images/poster1.png" alt="Poster 1" class="absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-1000 opacity-100" id="poster-slide-1">
+          <img loading="lazy" decoding="async" src="images/poster2.png" alt="Poster 2" class="absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-1000 opacity-0" id="poster-slide-2">
         </div>
         <h3 class="text-xl font-bold text-emerald-600 dark:text-emerald-400">Poster Making</h3>
       </div>
@@ -1079,7 +1100,10 @@
   </div>
 </section>
 
-<!-- Hobbies Sliders Script (Place before </body> or after this section) -->
+<!-- Hobbies Sliders Script (Place before <script>
+document.querySelectorAll('[data-img]').forEach(function(el){var im=new Image();im.onload=function(){im.className='w-full h-full object-contain';im.alt=el.getAttribute('data-alt')||'';el.innerHTML='';el.appendChild(im)};im.src=el.getAttribute('data-img')});
+</script>
+</body> or after this section) -->
 <script>
   // Football slider
   let fbSlide = 1;
@@ -1169,15 +1193,6 @@
               <div class="ml-4">
                 <h4 class="font-bold text-lg">WhatsApp (Egypt)</h4>
                 <a href="https://wa.me/201005678356" target="_blank" class="text-gray-700 hover:text-emerald-600 dark:text-gray-200">+20 100 567 8356</a>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <div class="contact-icon">
-                <i class="fab fa-whatsapp text-white text-2xl"></i>
-              </div>
-              <div class="ml-4">
-                <h4 class="font-bold text-lg">WhatsApp (UAE)</h4>
-                <a href="https://wa.me/971585378293" target="_blank" class="text-gray-700 hover:text-emerald-600 dark:text-gray-200">+971 58 537 8293</a>
               </div>
             </div>
             <div class="flex items-start">
